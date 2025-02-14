@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <title>{% block title %}Paises{% endblock %}</title>
+</head>
+<body>
+    {% block content %}
+        <h1>View info about the countries</h1>
+
+        <a href="{% url 'all_country_view' %}">All countries</a>
+        <a href="{% url 'country_for_name_view' %}">Search one country</a>
+    
+    {% endblock %}
+</body>
+</html>
