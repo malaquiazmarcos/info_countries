@@ -5,7 +5,7 @@
 {% block content %}
     <h1>Todos los Paises</h1>
 
-    <table>
+    <table border="1">
         <tr>
             <th>Flag</th>
             <th>Name</th>
@@ -13,18 +13,11 @@
         </tr>
         {% for data in order_list_countries %}
             <tr>
-                <td><img src="{{ data.flags }}" width="80px"></td>
-                <td>{{ data.name }}</td>
-                <td>{{ data.capital }}</td>
+                    <td><a href=""><img src="{{ data.flags }}" width="80px"></a></td>
+                    <td><a href="">{{ data.name }}</a></td>
+                    <td><a href="">{{ data.capital|join:', ' }}</a></td>
             </tr>
         {% endfor %}
     </table>
 
-    <!-- <ul>
-        {% for data in order_list_countries %}
-            <li>
-                <img src="{{ data.flags }}" width="80px"> | {{ data.name }} | {{ data.capital }}
-            </li>
-        {% endfor %}
-    </ul> -->
 {% endblock %}

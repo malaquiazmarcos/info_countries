@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from a_customer.services import get_all_countries, get_country_name
-from a_customer.forms import SearchCountry
+from a_customer.forms import SearchCountry, GuessCountry
+from a_customer. utils import order_countries
+import random
 
 def index(request):
 
@@ -8,23 +10,9 @@ def index(request):
 
 def all_country_view(request):
     countries = get_all_countries()
+    list_countries = order_countries(countries)
 
-    list_countries = []
-
-    for country in countries:
-        name = country['name']['common']
-        capital = country.get('capital', 'X')[0]
-        flags = country['flags']['png']
-        
-        dicc_countries = {
-            'name':name,
-            'capital':capital,
-            'flags':flags
-        }
-
-        list_countries.append(dicc_countries)
-
-    order_list_countries = sorted(list_countries, key= lambda x: x['name'])
+    order_list_countries = sorted(list_countries, key= lambda x: x['name'])  # ordena por nombre
 
     return render(request, 'paises/todos.html', {
         'countries':countries,
@@ -33,27 +21,18 @@ def all_country_view(request):
 
 def country_for_name_view(request):
     list_country = []
-    
+
     if request.method == 'POST':
         form = SearchCountry(request.POST)
 
         if form.is_valid():
             country_name = form.cleaned_data['country_name']
-
             data_country = get_country_name(country_name)
-
-            for data in data_country:
-                name = data['name']['common']
-                capital = data.get('capital', 'X')[0]
-                flags = data['flags']['png']
-
-                dicc_countries = {
-                    'name':name,
-                    'capital':capital,
-                    'flags':flags
-                }
-
-                list_country.append(dicc_countries)
+            if data_country:
+                list_country = order_countries(data_country)
+            else:
+                print('The conuntry was not found')
+            #print(data_country)
 
     else:
         form = SearchCountry()
@@ -61,4 +40,28 @@ def country_for_name_view(request):
     return render(request, 'paises/pais_nombre.html', {
         'form':form,
         'list_country':list_country
+    })
+
+def random_country_view(request):
+    countries = get_all_countries()
+    list_countries = order_countries(countries)
+
+    random_country = random.choice(list_countries)
+
+    country_name = None
+
+    if request.method == 'POST':    
+        form = GuessCountry(request.POST)
+
+        if form.is_valid():
+            country_name = form.cleaned_data['country_name']
+
+    else:
+        form = GuessCountry()
+
+
+    return render(request, 'paises/pais_random.html', {
+        'form':form, 
+        'list_coutries':list_countries,
+        'random_country':random_country
     })

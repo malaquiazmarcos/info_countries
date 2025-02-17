@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Guess the Country{% endblock %}
+
+{% block content %}
+    <h1>Guess the Country</h1>
+
+    <img src="{{ random_country.flags }}" alt="">
+
+    {{ random_country }}
+
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Send</button>
+    </form>
+
+{% endblock %}

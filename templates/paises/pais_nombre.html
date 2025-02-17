@@ -10,22 +10,59 @@
         <button type="submit">Search</button>
     </form>
 
-    <table>
+    {% if list_country %}
         {% for data in list_country %}
             {% if data is none  %}
-            
+
             {% else %}
-                <tr>
-                    <th>Flag</th>
-                    <th>Name</th>
-                    <th>Capital</th>
-                </tr>
-                <tr>
-                    <td><img src="{{ data.flags }}" width="80px"></td>
-                    <td>{{ data.name }}</td>
-                    <td>{{ data.capital }}</td>
-                </tr>
+                    <!-- <p>{{ data.name }}</p>
+                    <p><img src="{{ data.flags }}" alt=""></p>
+                    <p>Official Name: {{ data.official_name }}</p>
+                    <p>Capital: {{ data.capital|join:", " }}</p>
+                    <p>{{ data.area }} km2</p>
+                    <p>{{ data.population }} population</p>
+                    <p>Lating: {{ data.latlng|join:', ' }}</p>
+                    <p>Name in spanish: {{ data.translations }}</p>
+                    <p>Currencies: {{ data.currencies|join:', ' }} ({{ data.currencies_symbol|join:', ' }}) </p>
+                    <p>Languages: {{ data.languages|join:', ' }}</p>
+                    <p>Demonys: {{ data.demonyms }}</p>
+                    <p>Borders: {{ data.borders|join:', ' }}</p>
+                    <p>Continents: {{ data.continents|join:', ' }}</p>
+                    <p>Region and subregion: {{ data.region }}, {{ data.subregion }}</p>
+                    <p>Timezones: {{ data.timezones|join:', '}}</p>
+                    <p>Independent: {{ data.independent }}</p>
+                    <p>Exit to the sea: {{ data.landlocked }}</p>
+                    <p>Maps links<a href="{{ data.maps.googleMaps }}" target="_blank">Click here</a></p> -->
+
+                <h1>{{ data.name }}</h1>
+                <p><img src="{{ data.flags }}" alt="{{ data.name }} flag" /></p>
+                
+                <h3>General Information</h3>
+                <p>Official Name: {{ data.official_name }}</p>
+                <p>Capital: {{ data.capital|join:", " }}</p>
+                <p>Area: {{ data.area }} km²</p>
+                <p>Population: {{ data.population }}</p>
+                
+                <h3>Geography & Location</h3>
+                <p>Continents: {{ data.continents|join:', ' }}</p>
+                <p>Region and Subregion: {{ data.region }} {{ data.subregion }}</p>
+                <p>Latitude & Longitude: {{ data.latlng|join:', ' }}</p>
+                <p>Borders: {{ data.borders|join:', ' }}</p>
+                <p>Sea access: {{ data.landlocked }}</p>
+                <p>Timezones: {{ data.timezones|join:', ' }}</p>
+                <p>Maps: <a href="{{ data.maps.googleMaps }}" target="_blank">Click here</a></p>
+                
+                <h3>Languages & Currencies</h3>
+                <p>Languages: {{ data.languages|join:', ' }}</p>
+                <p>Currencies: {{ data.currencies|join:', ' }} {{ data.currencies_symbol|join:', ' }}</p>
+                
+                <h3>Additional Information</h3>
+                <p>Demonym: {{ data.demonyms }}</p>
+                <p>Independent: {{ data.independent }}</p>
+
             {% endif %}
         {% endfor %}
-    </table>
+    {% else %}
+        <p>The conuntry was not found</p>
+    {% endif %}
 {% endblock %}
