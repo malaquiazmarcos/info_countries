@@ -3,7 +3,7 @@
 {% block title %}Todos los paises{% endblock %}
 
 {% block content %}
-    <h1>Todos los Paises</h1>
+    <h1>All the countries</h1>
 
     <table border="1">
         <tr>
@@ -13,9 +13,9 @@
         </tr>
         {% for data in order_list_countries %}
             <tr>
-                    <td><a href=""><img src="{{ data.flags }}" width="80px"></a></td>
-                    <td><a href="">{{ data.name }}</a></td>
-                    <td><a href="">{{ data.capital|join:', ' }}</a></td>
+                    <td><a href="{% url 'country_for_name_view' %}?name={{ data.name }}"><img src="{{ data.flags }}" width="80px"></a></td>
+                    <td><a href="{% url 'country_for_name_view' %}?name={{ data.name }}">{{ data.name }}</a></td>
+                    <td><a href="{% url 'country_for_name_view' %}?name={{ data.name }}">{{ data.capital|join:', ' }}</a></td>
             </tr>
         {% endfor %}
     </table>

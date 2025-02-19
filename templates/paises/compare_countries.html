@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load humanize %}
+
+{% block title %}Compare countries{% endblock %}
+
+{% block content %}
+    <h1>Compare two countries</h1>
+    
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Apply</button>
+    </form>
+
+    {% if not not_found_1 %}
+        {% for data in list_1 %}
+            {% if data is none  %}
+            {% else %}
+                <h1>{{ data.name }}</h1>
+                <p><img src="{{ data.flags }}" alt="{{ data.name }} flag" /></p>
+                
+                <h3>General Information</h3>
+                <p>Official Name: {{ data.official_name }}</p>
+                <p>Capital: {{ data.capital|join:", " }}</p>
+                <p>Area: {{ data.area|intcomma }} km²</p>
+                <p>Population: {{ data.population|intcomma }}</p>
+                
+                <h3>Geography & Location</h3>
+                <p>Continents: {{ data.continents|join:', ' }}</p>
+                <p>Region and Subregion: {{ data.region }} {{ data.subregion }}</p>
+                <p>Latitude & Longitude: {{ data.latlng|join:', ' }}</p>
+                <p>Borders: {{ data.borders|join:', ' }}</p>
+                <p>Sea access: {{ data.landlocked }}</p>
+                <p>Timezones: {{ data.timezones|join:', ' }}</p>
+                <p>Maps: <a href="{{ data.maps.googleMaps }}" target="_blank">Click here</a></p>
+                
+                <h3>Languages & Currencies</h3>
+                <p>Languages: {{ data.languages|join:', ' }}</p>
+                <p>Currencies: {{ data.currencies|join:', ' }} {{ data.currencies_symbol|join:', ' }}</p>
+                
+                <h3>Additional Information</h3>
+                <p>Demonym: {{ data.demonyms }}</p>
+                <p>Independent: {{ data.independent }}</p>
+            {% endif %}
+        {% endfor %}
+    {% else %}
+        <p>The country was not found: {{ name_1 }}</p>
+    {% endif %}
+
+    {% if not not_found_2 %}
+        {% for data in list_2 %}
+            {% if data is none  %}
+            {% else %}
+                <h1>{{ data.name }}</h1>
+                <p><img src="{{ data.flags }}" alt="{{ data.name }} flag" /></p>
+                
+                <h3>General Information</h3>
+                <p>Official Name: {{ data.official_name }}</p>
+                <p>Capital: {{ data.capital|join:", " }}</p>
+                <p>Area: {{ data.area|intcomma }} km²</p>
+                <p>Population: {{ data.population|intcomma }}</p>
+                
+                <h3>Geography & Location</h3>
+                <p>Continents: {{ data.continents|join:', ' }}</p>
+                <p>Region and Subregion: {{ data.region }} {{ data.subregion }}</p>
+                <p>Latitude & Longitude: {{ data.latlng|join:', ' }}</p>
+                <p>Borders: {{ data.borders|join:', ' }}</p>
+                <p>Sea access: {{ data.landlocked }}</p>
+                <p>Timezones: {{ data.timezones|join:', ' }}</p>
+                <p>Maps: <a href="{{ data.maps.googleMaps }}" target="_blank">Click here</a></p>
+                
+                <h3>Languages & Currencies</h3>
+                <p>Languages: {{ data.languages|join:', ' }}</p>
+                <p>Currencies: {{ data.currencies|join:', ' }} {{ data.currencies_symbol|join:', ' }}</p>
+                
+                <h3>Additional Information</h3>
+                <p>Demonym: {{ data.demonyms }}</p>
+                <p>Independent: {{ data.independent }}</p>
+            {% endif %}
+        {% endfor %}
+    {% else %}
+        <p>The country was not found: {{ name_2 }}</p>
+    {% endif %}
+
+
+
+
+{% endblock %}

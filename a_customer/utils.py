@@ -1,7 +1,6 @@
 import pycountry
 
 def code__languages(codes):
-
     list_codes = []
 
     for code in codes:
@@ -46,7 +45,6 @@ def code_currencies_symbol(currencies):
         symbol.append('Information not available')
 
     return symbol
-
 
 def order_countries(countries):
     list_countries = []
@@ -97,5 +95,59 @@ def order_countries(countries):
         }
 
         list_countries.append(dicc_countries)
+    
+    return list_countries
+
+def order_countries_with_break(countries):
+    list_countries = []
+
+    for country in countries:
+        name = country['name']['common']
+        official_name = country['name']['official']
+        capital = country.get('capital', ['No capital city'])
+        area = country['area']
+        population = country['population']
+        borders = code_borders(country.get('borders', []))  
+        continents = country['continents']
+        currencies = code_currencies(country.get('currencies', ''))
+        currencies_symbol = code_currencies_symbol(country.get('currencies'))
+        languages = code__languages(country.get('languages', ['Language information not available']))
+        maps = country['maps']
+        demonyms = country.get('demonyms', {}).get('eng', {}).get('m', 'Information not available')
+        translations = country['translations']['spa']['common']
+        latlng = country['latlng']
+        region = country['region']
+        subregion = country.get('subregion','')
+        timezones = country['timezones']
+        independent = 'Yes' if country.get('independent', 'Information not available') else 'No'
+        landlocked = 'No' if country['landlocked'] else 'Yes'
+        flags = country['flags']['png']
+        
+        dicc_countries = {
+            'name':name,
+            'official_name':official_name,
+            'capital':capital,
+            'area':area,
+            'population':population,
+            'borders':borders,
+            'continents':continents,
+            'currencies':currencies,
+            'currencies_symbol':currencies_symbol,
+            'languages':languages,
+            'maps':maps,
+            'demonyms':demonyms,
+            'translations':translations,
+            'latlng':latlng,
+            'region':region,
+            'subregion':subregion,
+            'timezones':timezones,
+            'independent':independent,
+            'landlocked':landlocked,
+            'flags':flags
+        }
+
+        list_countries.append(dicc_countries)
+
+        break
     
     return list_countries

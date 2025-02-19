@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load humanize %}
 
 {% block title %}Buscar Pais por nombre{% endblock %}
 
@@ -10,38 +11,17 @@
         <button type="submit">Search</button>
     </form>
 
-    {% if list_country %}
+    {% if not not_found %}
         {% for data in list_country %}
-            {% if data is none  %}
-
-            {% else %}
-                    <!-- <p>{{ data.name }}</p>
-                    <p><img src="{{ data.flags }}" alt=""></p>
-                    <p>Official Name: {{ data.official_name }}</p>
-                    <p>Capital: {{ data.capital|join:", " }}</p>
-                    <p>{{ data.area }} km2</p>
-                    <p>{{ data.population }} population</p>
-                    <p>Lating: {{ data.latlng|join:', ' }}</p>
-                    <p>Name in spanish: {{ data.translations }}</p>
-                    <p>Currencies: {{ data.currencies|join:', ' }} ({{ data.currencies_symbol|join:', ' }}) </p>
-                    <p>Languages: {{ data.languages|join:', ' }}</p>
-                    <p>Demonys: {{ data.demonyms }}</p>
-                    <p>Borders: {{ data.borders|join:', ' }}</p>
-                    <p>Continents: {{ data.continents|join:', ' }}</p>
-                    <p>Region and subregion: {{ data.region }}, {{ data.subregion }}</p>
-                    <p>Timezones: {{ data.timezones|join:', '}}</p>
-                    <p>Independent: {{ data.independent }}</p>
-                    <p>Exit to the sea: {{ data.landlocked }}</p>
-                    <p>Maps links<a href="{{ data.maps.googleMaps }}" target="_blank">Click here</a></p> -->
-
+            {% if data is not none  %}
                 <h1>{{ data.name }}</h1>
                 <p><img src="{{ data.flags }}" alt="{{ data.name }} flag" /></p>
                 
                 <h3>General Information</h3>
                 <p>Official Name: {{ data.official_name }}</p>
                 <p>Capital: {{ data.capital|join:", " }}</p>
-                <p>Area: {{ data.area }} km²</p>
-                <p>Population: {{ data.population }}</p>
+                <p>Area: {{ data.area|intcomma }} km²</p>
+                <p>Population: {{ data.population|intcomma }}</p>
                 
                 <h3>Geography & Location</h3>
                 <p>Continents: {{ data.continents|join:', ' }}</p>
@@ -59,7 +39,6 @@
                 <h3>Additional Information</h3>
                 <p>Demonym: {{ data.demonyms }}</p>
                 <p>Independent: {{ data.independent }}</p>
-
             {% endif %}
         {% endfor %}
     {% else %}
