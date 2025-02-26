@@ -1,4 +1,16 @@
 import pycountry
+from math import sin, cos, atan2, sqrt, radians
+
+def haversine(lat1, long1, lat2, long2):
+    R = 6371  # radius of the earth in km
+
+    lat1, long1, lat2, long2 = map(radians, [lat1, long1, lat2, long2])
+
+    a = sin((lat2-lat1)/2)**2 + cos(lat1) * cos(lat2) * sin((long2-long1)/2)**2
+    c = 2 * atan2(sqrt(a), sqrt(1 - a))
+    d = R * c
+    
+    return d  # return the distance in km
 
 def code__languages(codes):
     list_codes = []

@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, JsonResponse
 from a_customer.services import get_all_countries, get_country_name
 from a_customer.forms import SearchCountry, GuessCountry, CompareCountries
-from a_customer. utils import order_countries, order_countries_with_break
+from a_customer. utils import order_countries, order_countries_with_break, haversine
 import random
 
 def index(request):
@@ -55,7 +55,9 @@ def country_for_name_view(request):
 def compare_countries_view(request):
     list_1, list_2 = [], []
     name_1, name_2 = None, None
+    latlng1, latlng2 = [], []
     not_found_1, not_found_2 = False, False
+    distance = None
     form = CompareCountries()
 
     if request.method == 'POST':
@@ -69,13 +71,21 @@ def compare_countries_view(request):
 
             if data_1: 
                 list_1 = order_countries_with_break(data_1)
+                for dicc in list_1:
+                    latlng1 = dicc['latlng']
             else:
                 not_found_1 = True
             if data_2:
                 list_2 = order_countries_with_break(data_2)
+                for dicc in list_2:
+                    latlng2 = dicc['latlng']
             else:
                 not_found_2 = True
-            
+
+            if latlng1 and latlng2:
+                distance = haversine(latlng1[0], latlng1[1], latlng2[0], latlng2[1])
+                distance = round(distance, 2)
+
     return render(request, 'paises/compare_countries.html', {
         'form':form,
         'list_1':list_1,
@@ -83,28 +93,55 @@ def compare_countries_view(request):
         'name_1':name_1,
         'name_2':name_2, 
         'not_found_1':not_found_1,
-        'not_found_2':not_found_2
+        'not_found_2':not_found_2,
+        'distance':distance
     })
 
 def random_country_view(request):
+    #random_country = None
     countries = get_all_countries()
     list_countries = order_countries(countries)
 
-    random_country = random.choice(list_countries)
+    random_country = request.session.get('random_country', None)
+    print(random_country['name'])
 
-    country_name = None
+    
 
-    if request.method == 'POST':    
-        form = GuessCountry(request.POST)
+    if request.method == 'POST':
+        user_guess = request.POST.get('country-input', '').strip().lower()
+        correct_name = random_country['name'].strip().lower()
 
-        if form.is_valid():
-            country_name = form.cleaned_data['country_name']
+        action = request.POST.get('action')
 
-    else:
-        form = GuessCountry()
+        print(f'this is the action: {action}')
 
-    return render(request, 'paises/pais_random.html', {
-        'form':form, 
+        if action == 'refresh':
+            print(f'this is the action: {action}')
+            random_country = random.choice(list_countries)
+
+            request.session['random_country'] = random_country
+            request.session['random_country_name'] = random_country['name']
+            
+
+        print(f' this send the user: {user_guess} and this is the correct answer: {correct_name}')
+
+        if user_guess == correct_name:
+            return JsonResponse({'correct':True})
+        else:
+            return JsonResponse({'correct':False, 'correct_answer':correct_name})
+        
+    if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+        random_country = random.choice(list_countries)
+
+        request.session['random_country'] = random_country
+        request.session['random_country_name'] = random_country['name']
+
+        return JsonResponse({
+            'name' : random_country['name'],
+            'flags': random_country['flags']
+        })
+
+    return render(request, 'paises/pais_random.html', { 
         'list_coutries':list_countries,
         'random_country':random_country
     })

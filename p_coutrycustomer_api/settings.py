@@ -69,6 +69,8 @@ TEMPLATES = [
     },
 ]
 
+SESSION_ENGINE = "django.contrib.sessions.backends.signed_cookies"
+
 # URL base para los archivos estáticos
 STATIC_URL = '/static/'
 

@@ -1,24 +1,21 @@
 from django.test import TestCase
 
-list = [{'name': 'Brasil'}, {'name': 'Argentina'}, ]
 
-order_list = sorted(list, key=lambda x : x['name'] )
+num = 2
+C = 10 
+cont = 0
+stop = True
 
-print(order_list)
-
-currencies = {'EUR': {'name': 'Euro', 'symbol': '€'}}
-
-def currencies_s(currencies):
-    code = None
-
-    for currencie in currencies.values():
-        code = currencie['symbol']
+while stop:
     
-    return code
+    result = num / C
+    cont += 1
+    num = result
 
+    if result >= 0 and result < 1:
+        print(f'El numero tiene {cont} digitos')
+        stop = False
 
-code = currencies_s(currencies)
-print(code)
-
+        
 
 

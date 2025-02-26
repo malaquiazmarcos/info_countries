@@ -82,7 +82,9 @@
         <p>The country was not found: {{ name_2 }}</p>
     {% endif %}
 
-
-
+    {% if distance %}
+        <p>Distance between the two countries: {{ distance|intcomma }}km</p>
+    {% else %}
+    {% endif %}
 
 {% endblock %}
