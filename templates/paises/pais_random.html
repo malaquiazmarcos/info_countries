@@ -3,6 +3,7 @@
 {% block title %}Guess the Country{% endblock %}
 
 {% block content %}
+
     <h1>Guess the Country</h1>
 
     <button id="start-button">Start</button>
@@ -17,14 +18,7 @@
     <button id="refresh-country" style="display: none;">Refresh</button>
 
     <div id="result-message"></div>
-    
-    
-    <!-- {{ random_country }}
 
-    <form action="" method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Send</button>
-    </form> -->
+    <div id="data-country"></div>
 
 {% endblock %}

@@ -1,21 +1,23 @@
 from django.test import TestCase
 
 
-num = 2
-C = 10 
-cont = 0
-stop = True
-
-while stop:
+class Robot:
+    def __init__(self, name, velocity):
+        self.name = name
+        self.velocity = velocity
     
-    result = num / C
-    cont += 1
-    num = result
-
-    if result >= 0 and result < 1:
-        print(f'El numero tiene {cont} digitos')
-        stop = False
-
+    def robot_data(self):
+        data_list = [self.name, self.velocity]
         
+        return data_list 
+
+    def run(self, time):
+        distance = self.velocity / time
+        
+        return distance
 
 
+robot_1 = Robot('Alfa Centauri', 60)
+print(robot_1.robot_data()) 
+
+distance_1 = robot_1

@@ -2,6 +2,19 @@ import pycountry
 from math import sin, cos, atan2, sqrt, radians
 
 def haversine(lat1, long1, lat2, long2):
+    """
+    Calculates the distance between two countries 
+    using the Haversine formula.
+
+    Args: 
+        - lat1 (float): Latitude on the first location.
+        - long1 (float): Longitude on the first location.
+        - lat2 (float): Latitude on the second location.
+        - long2 (float): Longitude on the second location.
+
+    returns:
+        - d: distance in km.
+    """
     R = 6371  # radius of the earth in km
 
     lat1, long1, lat2, long2 = map(radians, [lat1, long1, lat2, long2])
@@ -10,9 +23,21 @@ def haversine(lat1, long1, lat2, long2):
     c = 2 * atan2(sqrt(a), sqrt(1 - a))
     d = R * c
     
-    return d  # return the distance in km
+    return d 
 
-def code__languages(codes):
+def code_languages(codes):
+    """
+    Convert ISO 639-3 alpha-3 codes into full language name.
+
+    Args:
+        - codes (list): containing codes ISO 639-3 (e.g. [spa, eng])
+
+    Returns:
+        - list_codes (list): the full language name or ['Unknown language'] if empty.
+    """
+    if not codes:
+        return ['Unknown language']
+    
     list_codes = []
 
     for code in codes:
@@ -24,6 +49,15 @@ def code__languages(codes):
 
 
 def code_borders(codes):
+    """
+    Convert ISO 3166-1 alpha-3 codes into full countries name.
+
+    Args:
+        - codes (list): containing codes ISO 3166-1 (e.g. [BRA, PAR, BOL, CHI] borders of Argentina).
+
+    Returns:
+        - list_codes (list): the complete name of the countries or ['No bordering countries'] if empty.
+    """
     if not codes:
         return ['No bordering countries']
 
@@ -38,6 +72,18 @@ def code_borders(codes):
     return list_codes
 
 def code_currencies(codes):
+    """
+    Convert ISO 4217 alpha-3 into full currencies name.
+
+    Args: 
+        - codes (list): Containing codes ISO 4217 (e.g. [ARS, EUR, USD]).
+
+    Returns:
+        - list_codes (list): the complete full currencies name or ['Unkown currencies'] if empty.
+    """
+    if not codes:
+        return ['Unkown currencies']
+    
     list_codes = []
 
     for code in codes:
@@ -48,17 +94,37 @@ def code_currencies(codes):
     return list_codes
 
 def code_currencies_symbol(currencies):
+    """
+    Iterates about the dictionary and obtain the symbol of currency.
+
+    Args:
+        - currencies (dict): diccionary with currencies data (e.g.  {'currencies': {'TRY': {'name': 'Turkish lira', 'symbol': '₺'}}}).
+
+    Returns:
+        - symbol (list): all symbols of every country.
+    """
     symbol = []
 
     if currencies:
         for currency in currencies.values():
-            symbol.append(f'({currency['symbol']})')
+            symbol.append(f"({currency['symbol']})")
     else:
         symbol.append('Information not available')
 
     return symbol
 
 def order_countries(countries):
+    """
+    Extract the relevant data and fetch the REST Counties API.
+
+    The API data first stored in a dictionay, after into a list.
+
+    Args:
+        - countries (list): this list containing many dictionaries with API data.
+
+    Returns:
+        - list_countries (list): other list, this containing only the relevant data.
+    """
     list_countries = []
 
     for country in countries:
@@ -71,7 +137,7 @@ def order_countries(countries):
         continents = country['continents']
         currencies = code_currencies(country.get('currencies', ''))
         currencies_symbol = code_currencies_symbol(country.get('currencies'))
-        languages = code__languages(country.get('languages', ['Language information not available']))
+        languages = code_languages(country.get('languages', ['Language information not available']))
         maps = country['maps']
         demonyms = country.get('demonyms', {}).get('eng', {}).get('m', 'Information not available')
         translations = country['translations']['spa']['common']
@@ -111,6 +177,19 @@ def order_countries(countries):
     return list_countries
 
 def order_countries_with_break(countries):
+    """
+    Extract the relevant data and fetch the REST Country API.
+
+    This function is similar to the up, but only choose the first country that matches
+    with the request of the user. Using in the view for search one country for name to avoid
+    showing many countries (e.g. if search letter A: Argentina, Algeria, ...)
+
+    Args:
+        - countries (list): this list containing many dictionaries with API data.
+
+    Returns:
+        - list_countries (list): other list, this containing only the relevant data.
+    """
     list_countries = []
 
     for country in countries:
@@ -123,7 +202,7 @@ def order_countries_with_break(countries):
         continents = country['continents']
         currencies = code_currencies(country.get('currencies', ''))
         currencies_symbol = code_currencies_symbol(country.get('currencies'))
-        languages = code__languages(country.get('languages', ['Language information not available']))
+        languages = code_languages(country.get('languages', ['Language information not available']))
         maps = country['maps']
         demonyms = country.get('demonyms', {}).get('eng', {}).get('m', 'Information not available')
         translations = country['translations']['spa']['common']

@@ -1,19 +1,30 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect, JsonResponse
 from a_customer.services import get_all_countries, get_country_name
-from a_customer.forms import SearchCountry, GuessCountry, CompareCountries
+from a_customer.forms import SearchCountry, CompareCountries
 from a_customer. utils import order_countries, order_countries_with_break, haversine
 import random
 
 def index(request):
+    """
+    View to show the base template.
+    """
 
     return render(request, 'base.html')
 
 def all_country_view(request):
+    """
+    View to show all the countries.
+
+    Steps:
+    1. Call the API using 'get_all_countries()'
+    2. Extract relevant data for the countries using 'order_countries(countries)'
+    3. Sort by a-z name.
+    """
     countries = get_all_countries()
     list_countries = order_countries(countries)
 
-    order_list_countries = sorted(list_countries, key= lambda x: x['name'])  # ordena por nombre
+    order_list_countries = sorted(list_countries, key= lambda x: x['name']) 
 
     return render(request, 'paises/todos.html', {
         'countries':countries,
@@ -21,11 +32,27 @@ def all_country_view(request):
     })
 
 def country_for_name_view(request):
+    """
+    View allows to search any country.
+
+    Workflow:
+    1. Initialize an empty form and country list.
+    2. If 'not_found = None' the template it's going well.
+    3. Handle Get request, the name comes from URL:
+        - Get the name from URL.
+        - Put an initial data in form and call the API with the country name. 
+        - Extract relevant data from the countries.
+    4. Handle POST request, the name comes to the imput from user send:
+        - Proccess the form and obtain the name of the country.
+        - Fetch the API with the name and extract relevant data in list
+        - If 'not_found = True' the template show an exeption.
+    """
     list_country = []
     not_found = None
+    country_name = None
     form = SearchCountry()
 
-    # this comes to all countries
+    # Search by URL parameter
     if request.method == 'GET':
         country_name_link = request.GET.get('name', '')
         if country_name_link:
@@ -34,7 +61,7 @@ def country_for_name_view(request):
             if data_country:
                 list_country = order_countries(data_country)
 
-    # this if the user send input with the name of country
+    # Search by user input
     elif request.method == 'POST':
         form = SearchCountry(request.POST)
         if form.is_valid():
@@ -42,17 +69,35 @@ def country_for_name_view(request):
             data_country = get_country_name(country_name)
             if data_country:
                 list_country = order_countries(data_country)
+
+                # Redirect to the URL with the country name as a query parameter
+                return HttpResponseRedirect(f'{request.path}?name={country_name}')
             else:
+                print('here a error')
                 not_found = True
-            return HttpResponseRedirect(f'{request.path}?name={country_name}')  # this redirect url with name of the country
+
+            
 
     return render(request, 'paises/pais_nombre.html', {
         'form':form,
         'list_country':list_country,
-        'not_found':not_found
+        'not_found':not_found,
+        'country_name':country_name
     })
 
 def compare_countries_view(request):
+    """
+    View that compare two countries.
+
+    Workflow:
+    1. Initialize lists, variables and the form.
+    2. Handle POST request:
+        - Get data from input the forms.
+        - Fetch country data from the API.
+        - If data is found, obtain the lat and long.
+        - If not data, send a signal to template for handle a exeption.
+        - Calculate the distance if exists lat and long.
+    """
     list_1, list_2 = [], []
     name_1, name_2 = None, None
     latlng1, latlng2 = [], []
@@ -98,48 +143,63 @@ def compare_countries_view(request):
     })
 
 def random_country_view(request):
-    #random_country = None
+    """
+    View for select a random country.
+
+    In this view, occupate AJAX for asyncronic task
+    of this way not reload the pages. 
+
+    Workflow:
+    1. Fetch all countries from the API and extract the independent.
+    2. Extract the relevant data.
+    3. If not country in session, obtain a random and save a new one.
+    4. Handle POST request:
+        - Get random country in session, user input and correct answer.
+        - Handle if answer is correct or not.
+    5. Handle if request comes to AJAX:
+        - If not list with countries and not random country returns an exeption.
+        - Select a random country and save in session.    
+    """
     countries = get_all_countries()
-    list_countries = order_countries(countries)
+    list_countries_ni = [x for x in countries if x.get('independent', False) != False]
 
-    random_country = request.session.get('random_country', None)
-    print(random_country['name'])
+    list_countries = order_countries(list_countries_ni)
 
-    
+    random_country = None                      
+
+    if 'random_country' not in request.session:
+        request.session['random_country'] = random.choice(list_countries)
+        request.session['random_country_name'] = request.session['random_country']['name']
 
     if request.method == 'POST':
+        random_country = request.session.get('random_country', None)
         user_guess = request.POST.get('country-input', '').strip().lower()
         correct_name = random_country['name'].strip().lower()
 
-        action = request.POST.get('action')
-
-        print(f'this is the action: {action}')
-
-        if action == 'refresh':
-            print(f'this is the action: {action}')
-            random_country = random.choice(list_countries)
-
-            request.session['random_country'] = random_country
-            request.session['random_country_name'] = random_country['name']
-            
-
-        print(f' this send the user: {user_guess} and this is the correct answer: {correct_name}')
-
         if user_guess == correct_name:
-            return JsonResponse({'correct':True})
+            return JsonResponse({'correct':True, 'correct_answer':correct_name})
         else:
             return JsonResponse({'correct':False, 'correct_answer':correct_name})
         
     if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
-        random_country = random.choice(list_countries)
+        try: 
+            if not list_countries:
+                return JsonResponse({'error': 'No countries available'}, status=404)
 
-        request.session['random_country'] = random_country
-        request.session['random_country_name'] = random_country['name']
+            random_country = random.choice(list_countries)
 
-        return JsonResponse({
-            'name' : random_country['name'],
-            'flags': random_country['flags']
-        })
+            if not random_country:
+                return JsonResponse({'error': 'Failed to select a country'}, status=500)
+
+            request.session['random_country'] = random_country
+            request.session['random_country_name'] = random_country['name']
+
+            return JsonResponse({
+                'name' : random_country['name'],
+                'flags': random_country['flags']
+            })
+        except Exception as e:
+            return JsonResponse({'error': str(e)}, status=500)
 
     return render(request, 'paises/pais_random.html', { 
         'list_coutries':list_countries,
