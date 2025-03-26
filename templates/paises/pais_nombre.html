@@ -4,6 +4,7 @@
 {% block title %}Buscar Pais por nombre{% endblock %}
 
 {% block content %}
+
     <h1>Search Country:</h1>
     <form action="" method="post">
         {% csrf_token %}
@@ -13,7 +14,7 @@
 
     {% if not not_found %}
         {% for data in list_country %}
-            {% if data is not none  %}
+            {% if data is not none %}
                 <h1>{{ data.name }}</h1>
                 <p><img src="{{ data.flags }}" alt="{{ data.name }} flag" /></p>
                 
@@ -42,6 +43,7 @@
             {% endif %}
         {% endfor %}
     {% else %}
-        <p>The conuntry was not found</p>
+        <p>The conuntry was not found: {{ country_name }}</p>
     {% endif %}
+
 {% endblock %}
