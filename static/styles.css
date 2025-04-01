@@ -1,4 +1,203 @@
 
-* {
-    background-color: grey;
+body {
+    background-color: #1a1a1a;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.hero-section {
+    background: url("/static/images/neom.jpg") no-repeat center center;
+    background-size: cover;
+    color: #ffff;
+    height: 100vh;
+    position: relative;
+}
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+.hero-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px; /* Altura del difuminado */
+    background: linear-gradient(to bottom, transparent, #080d18); /* Gradiente de transparente al color de la siguiente sección */
+    z-index: 1;
+}
+.hero-section-II {
+    background: url("/static/images/aurora.jpg") no-repeat center center;
+    background-size: cover;
+    color: #ffff;
+    height: 100vh;
+    position: relative;
+}
+.hero-section-II::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+.hero-section-II::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px; /* Altura del difuminado */
+    background: linear-gradient(to top, transparent, #080d18); /* Difuminado hacia arriba */
+    z-index: 2;
+}
+
+.navbar { 
+    background: rgba(0, 0, 0, 0);  /* first here in 0.7 oppacity */
+
+    z-index: 1000;
+    padding: 1rem 0;
+    position: absolute; /* Cambiamos de position: static a position: absolute */
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    transition: background 0.3s ease;
+    
+}
+.navbar.scrolled {
+    background: rgba(0, 0, 0, 0.8); /* Fondo más opaco al hacer scroll */
+}
+.tour-card {
+    background: rgba(255, 255, 255, 0.1);
+    height: 450px;
+    display: flex;
+    border: none;   
+}
+.main-links {
+    text-decoration: none;
+}
+
+.hero-section-allcountries {
+    background: url("/static/images/neom.jpg") no-repeat center center;
+    background-size: cover;
+    color: #ffff;
+    height: 70vh;
+    position: relative;
+}
+.hero-section-allcountries::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-section-searchcountry {
+    background: url("/static/images/neom.jpg") no-repeat center center;
+    background-size: cover;
+    color: #ffff;
+    height: 70vh;
+    position: relative;
+}
+.hero-section-searchcountry::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+
+
+.intro-icons {
+    width: 60px;
+    height: 60px;
+}
+
+/* footer */
+.social-icons {
+    width: 30px;
+    height: 30px;
+}
+
+/* Estilos para el footer */
+footer {
+    position: absolute; /* Posiciona el footer en la parte inferior de hero-section-II */
+    bottom: 20px; /* Ajusta la distancia desde la parte inferior */
+    left: 0;
+    right: 0;
+    background: transparent; /* Fondo transparente para que se vea la imagen de fondo de hero-section-II */
+    z-index: 2; /* Asegura que el footer esté por encima del overlay */
+}
+
+/* Estilos para los íconos de redes sociales */
+.social-icons {
+    width: 30px; /* Ajusta el tamaño de los íconos */
+    height: 30px;
+    transition: opacity 0.3s ease; /* Efecto al pasar el mouse */
+}
+
+/* Efecto hover para los íconos */
+.social-icons:hover {
+    opacity: 0.7;
+}
+
+
+.body-section {
+    background-color: #080d18;
+    color: #ffff;
+}
+
+
+
+
+/* four images to explore app */
+.tour-card {
+    border: none !important; 
+    height: 100%;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20%; /* Ajusta la altura del fondo del texto */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay-text {
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
 }
