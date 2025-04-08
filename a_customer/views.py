@@ -74,9 +74,7 @@ def country_for_name_view(request):
                 return HttpResponseRedirect(f'{request.path}?name={country_name}')
             else:
                 print('here a error')
-                not_found = True
-
-            
+                not_found = True     
 
     return render(request, 'paises/pais_nombre.html', {
         'form':form,

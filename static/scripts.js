@@ -59,15 +59,16 @@ document.getElementById('start-button').addEventListener('click', async function
         'headers': {'X-Requested-With': 'XMLHttpRequest'}
     });
     let data = await response.json()
-    console.log('Country:', data.name)
-    console.log('Flag:', data.flags)
+    // console.log('Country:', data.name)
+    // console.log('Flag:', data.flags)
 
     currentCountryName = data.name;
 
     document.getElementById('start-button').style.display = 'none';
+    document.getElementById('input-div').classList.remove('d-none');
+    document.getElementById('show-country-btn').classList.remove('d-none');
 
     document.getElementById('random-country').innerHTML = `
-    <p>Country: ${data.name}</p>
     <img src="${data.flags}">
     `;
 
@@ -85,13 +86,17 @@ document.getElementById('start-button').addEventListener('click', async function
             'headers': {'X-Requested-With': 'XMLHttpRequest'}
         });
         let data = await response.json()
-        console.log('Country:', data.name)
-        console.log('Flag:', data.flags)
+        // console.log('Country:', data.name)
+        // console.log('Flag:', data.flags)
+
+        currentCountryName = data.name;
     
         document.getElementById('start-button').style.display = 'none';
+        document.getElementById('input-div').classList.remove('d-none');
+        document.getElementById('data-country').classList.add('d-none');
+        document.getElementById('show-country-name').classList.add('d-none');
     
         document.getElementById('random-country').innerHTML = `
-        <p>Country: ${data.name}</p>
         <img src="${data.flags}">
         `;
 
@@ -100,11 +105,26 @@ document.getElementById('start-button').addEventListener('click', async function
         document.getElementById('data-country').innerHTML = '';
     });
 
+    /** 
+     * Show the answer if the user unknowing.
+     * */ 
+    document.getElementById('show-country-btn').addEventListener('click', async function() {
+
+        document.getElementById('show-country-name').classList.remove('d-none');
+        document.getElementById('show-country-name').innerHTML = `${currentCountryName}`;
+        document.getElementById('data-country').classList.remove('d-none');
+        document.getElementById('data-country').innerHTML = 
+                `<a href="/search-country-for-name/?name=${encodeURIComponent(currentCountryName)}" style="text-decoration:none; color=#fff;">Learn more about ${currentCountryName}</a>`;
+
+    })
+
     /**
-     * Send user responde to backend to verify if correct or not. 
+     * Send user response to backend to verify if correct or not. 
      */
     document.getElementById('submit-button').addEventListener('click', async function() {
         let userGuess = document.getElementById('country-input').value;
+
+        document.getElementById('data-country').classList.remove('d-none');
 
         console.log("📤 Enviando:", userGuess);
     
@@ -123,12 +143,14 @@ document.getElementById('start-button').addEventListener('click', async function
         if (result.correct) {
             document.getElementById('result-message').innerText = '✅ Correct!';
             document.getElementById('input-div').style.display = 'none';
+            document.getElementById('data-country').classList.remove('d-none');
             document.getElementById('data-country').innerHTML = 
-                `<a href="/buscar-pais-por-nombre/?name=${encodeURIComponent(result.correct_answer)}">Learn more about ${result.correct_answer}</a>`;
+                `<a href="/search-country-for-name/?name=${encodeURIComponent(result.correct_answer)}">Learn more about ${result.correct_answer}</a>`;
         } else {
             document.getElementById('result-message').innerText = `❌ Wrong! It was: ${result.correct_answer}`;
+            document.getElementById('data-country').classList.remove('d-none');
             document.getElementById('data-country').innerHTML = 
-                `<a href="/buscar-pais-por-nombre/?name=${encodeURIComponent(result.correct_answer)}">Learn more about ${result.correct_answer}</a>`;
+                `<a href="/search-country-for-name/?name=${encodeURIComponent(result.correct_answer)}">Learn more about ${result.correct_answer}</a>`;
         }
     });
 

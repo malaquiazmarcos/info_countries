@@ -1,10 +1,32 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block title %}Guess the Country{% endblock %}
 
 {% block content %}
 
-    <h1>Guess the Country</h1>
+    <section class="hero-section-guesscountries d-flex align-items-center">
+        <div class="container position-relative">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="display-1 fw-bold">GUESS THE COUNTRY</h1>
+                    <p class="lead my-4">
+                        Think you know the world’s flags? <br>
+                        Look at the flag and try to guess the country. <br>
+                        Test your knowledge and have fun!
+                    </p>
+                </div>
+
+                <!-- <div class="col-lg-4">
+                    <img src="https://via.placeholder.com/300x400" class="img-fluid" alt="Travel Image">
+                </div> -->
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- <h1>Guess the Country</h1>
 
     <button id="start-button">Start</button>
 
@@ -20,5 +42,43 @@
     <div id="result-message"></div>
 
     <div id="data-country"></div>
+ -->
+    <section class="body-section py-5">
+        <div class="container">
+            <h1 class="display-4 text-center mb-5"><b>Guess the Country</b></h1>
+    
+            <div class="text-center mb-4">
+                <button id="start-button" class="btn btn-dark">Start</button>
+            </div>
+    
+            <div id="show-country-name" class="text-center mb-4 h3"></div>
+            <div id="random-country" class="text-center mb-4"></div>
+    
+            <div id="input-div" class="d-flex justify-content-center align-items-center mb-4 d-none">
+                <input type="text" id="country-input" placeholder="Enter the country" class="form-control me-3" style="max-width: 300px;">
+                <button type="submit" id="submit-button" class="btn btn-dark">Submit</button>
+            </div>
+    
+            <div class="text-start mb-4">
+                <div class="d-inline-block pe-2">
+                    <button id="refresh-country" style="display: none;" class="btn btn-outline-light">Refresh</button>
+                </div>
+                <div class="d-inline-block">
+                    <button id="show-country-btn" class="btn btn-outline-light d-none">Show Answer</button>
+                </div>
+            </div>
+    
+            <div id="result-message" class="text-center mb-4"></div>
+    
+            <div id="data-country" class="country-info bg-dark p-4 rounded-3 shadow-sm d-none"></div>
+        </div>
+    </section>
+
+
 
 {% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'scripts.js' %}" defer></script>
+{% endblock %}
+

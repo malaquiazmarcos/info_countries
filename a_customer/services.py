@@ -11,7 +11,7 @@ def get_all_countries():
                 Retunrs an empty list in case of error.
     """
     try:
-        response = requests.get(f'{API_URL}/all', timeout=5)   # Timeout para evitar esperas infinitas
+        response = requests.get(f'{API_URL}/all?fields=name,flags,capital,area,population,borders,continents,currencies,languages,maps,translations,latlng,region,subregion,timezones,independent,landlocked', timeout=15)   # Timeout para evitar esperas infinitas
         response.raise_for_status()  # Lanza error si la respuesta es 4xx o 5xx
 
         return response.json()
@@ -32,7 +32,7 @@ def get_country_name(name_country):
                 Returns None in case of error.
     """
     try:
-        response = requests.get(f'{API_URL}/name/{name_country}', timeout=5)
+        response = requests.get(f'{API_URL}/name/{name_country}', timeout=15, verify=False)
         response.raise_for_status()
 
         return response.json()

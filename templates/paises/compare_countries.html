@@ -4,7 +4,27 @@
 {% block title %}Compare countries{% endblock %}
 
 {% block content %}
-    <h1>Compare two countries</h1>
+
+    <section class="hero-section-comparecountries d-flex align-items-center">
+        <div class="container position-relative">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="display-1 fw-bold">COMPARE COUNTRIES</h1>
+                    <p class="lead my-4">
+                        Curious about how two countries stack up? <br>
+                        Compare their flags, capitals, populations, and more — side by side.
+                    </p>
+                </div>
+
+                <!-- <div class="col-lg-4">
+                    <img src="https://via.placeholder.com/300x400" class="img-fluid" alt="Travel Image">
+                </div> -->
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- <h1>Compare two countries</h1>
     
     <form action="" method="post">
         {% csrf_token %}
@@ -85,6 +105,119 @@
     {% if distance %}
         <p>Distance between the two countries: {{ distance|intcomma }}km (this distance is approximated from the center of the countries)</p>
     {% else %}
-    {% endif %}
+    {% endif %} -->
+
+
+
+    <section class="body-section py-5">
+        <div class="container">
+            <h1 class="display-4 text-center mb-5"><b>Compare Two Countries</b></h1>
+    
+            <!-- <form action="" method="post" class="d-flex justify-content-center align-items-center mb-5">
+                {% csrf_token %}
+                {{ form }}
+                <button type="submit" class="btn btn-dark ms-3">Apply</button>
+            </form>
+     -->
+            
+
+            <form action="" method="post" class="d-flex flex-column align-items-center gap-3 mb-5 mx-auto" style="max-width: 600px;">
+                {% csrf_token %}
+                <div class="d-flex flex-wrap justify-content-center gap-2">
+                    {{ form.country_name_1 }}
+                    {{ form.country_name_2 }} 
+                </div>
+                <button type="submit" class="btn btn-dark">Apply</button>
+            </form>
+
+
+            <div class="row">
+                <!-- Primer país -->
+                <div class="col-md-6 mb-4">
+                    {% if not not_found_1 %}
+                        {% for data in list_1 %}
+                            {% if data is not none %}
+                                <div class="country-info bg-dark p-4 rounded-3 shadow-sm">
+                                    <h1 class="display-5 text-center mb-4">{{ data.name }}</h1>
+                                    <p class="text-center"><img src="{{ data.flags }}" alt="{{ data.name }} flag" class="img-fluid rounded" style="max-width: 200px;" /></p>
+                                    
+                                    <h3 class="h4 border-bottom pb-2 mb-3">General Information</h3>
+                                    <p class="mb-2"><b>Official Name:</b> {{ data.official_name }}</p>
+                                    <p class="mb-2"><b>Capital:</b> {{ data.capital|join:", " }}</p>
+                                    <p class="mb-2"><b>Area:</b> {{ data.area|intcomma }} km²</p>
+                                    <p class="mb-2"><b>Population:</b> {{ data.population|intcomma }}</p>
+                                    
+                                    <h3 class="h4 border-bottom pb-2 mb-3">Geography & Location</h3>
+                                    <p class="mb-2"><b>Continents:</b> {{ data.continents|join:', ' }}</p>
+                                    <p class="mb-2"><b>Region and Subregion:</b> {{ data.region }} {{ data.subregion }}</p>
+                                    <p class="mb-2"><b>Latitude & Longitude:</b> {{ data.latlng|join:', ' }}</p>
+                                    <p class="mb-2"><b>Borders:</b> {{ data.borders|join:', ' }}</p>
+                                    <p class="mb-2"><b>Sea access:</b> {{ data.landlocked }}</p>
+                                    <p class="mb-2"><b>Timezones:</b> {{ data.timezones|join:', ' }}</p>
+                                    <p class="mb-2"><b>Maps:</b> <a href="{{ data.maps.googleMaps }}" target="_blank" class="text-secondary">Click here</a></p>
+                                    
+                                    <h3 class="h4 border-bottom pb-2 mb-3">Languages & Currencies</h3>
+                                    <p class="mb-2"><b>Languages:</b> {{ data.languages|join:', ' }}</p>
+                                    <p class="mb-2"><b>Currencies:</b> {{ data.currencies|join:', ' }} {{ data.currencies_symbol|join:', ' }}</p>
+                                    
+                                    <h3 class="h4 border-bottom pb-2 mb-3">Additional Information</h3>
+                                    <p class="mb-2"><b>Demonym:</b> {{ data.demonyms }}</p>
+                                    <p class="mb-2"><b>Independent:</b> {{ data.independent }}</p>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    {% else %}
+                        <p class="text-danger text-center mt-4">The country was not found: {{ name_1 }}</p>
+                    {% endif %}
+                </div>
+    
+                <!-- Segundo país -->
+                <div class="col-md-6 mb-4">
+                    {% if not not_found_2 %}
+                        {% for data in list_2 %}
+                            {% if data is not none %}
+                                <div class="country-info bg-dark p-4 rounded-3 shadow-sm">
+                                    <h1 class="display-5 text-center mb-4">{{ data.name }}</h1>
+                                    <p class="text-center"><img src="{{ data.flags }}" alt="{{ data.name }} flag" class="img-fluid rounded" style="max-width: 200px;" /></p>
+                                    
+                                    <h3 class="h4 border-bottom pb-2 mb-3">General Information</h3>
+                                    <p class="mb-2"><b>Official Name:</b> {{ data.official_name }}</p>
+                                    <p class="mb-2"><b>Capital:</b> {{ data.capital|join:", " }}</p>
+                                    <p class="mb-2"><b>Area:</b> {{ data.area|intcomma }} km²</p>
+                                    <p class="mb-2"><b>Population:</b> {{ data.population|intcomma }}</p>
+                                    
+                                    <h3 class="h4 border-bottom pb-2 mb-3">Geography & Location</h3>
+                                    <p class="mb-2"><b>Continents:</b> {{ data.continents|join:', ' }}</p>
+                                    <p class="mb-2"><b>Region and Subregion:</b> {{ data.region }} {{ data.subregion }}</p>
+                                    <p class="mb-2"><b>Latitude & Longitude:</b> {{ data.latlng|join:', ' }}</p>
+                                    <p class="mb-2"><b>Borders:</b> {{ data.borders|join:', ' }}</p>
+                                    <p class="mb-2"><b>Sea access:</b> {{ data.landlocked }}</p>
+                                    <p class="mb-2"><b>Timezones:</b> {{ data.timezones|join:', ' }}</p>
+                                    <p class="mb-2"><b>Maps:</b> <a href="{{ data.maps.googleMaps }}" target="_blank" class="text-secondary">Click here</a></p>
+                                    
+                                    <h3 class="h4 border-bottom pb-2 mb-3">Languages & Currencies</h3>
+                                    <p class="mb-2"><b>Languages:</b> {{ data.languages|join:', ' }}</p>
+                                    <p class="mb-2"><b>Currencies:</b> {{ data.currencies|join:', ' }} {{ data.currencies_symbol|join:', ' }}</p>
+                                    
+                                    <h3 class="h4 border-bottom pb-2 mb-3">Additional Information</h3>
+                                    <p class="mb-2"><b>Demonym:</b> {{ data.demonyms }}</p>
+                                    <p class="mb-2"><b>Independent:</b> {{ data.independent }}</p>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    {% else %}
+                        <p class="text-danger text-center mt-4">The country was not found: {{ name_2 }}</p>
+                    {% endif %}
+                </div>
+            </div>
+    
+            <!-- Distancia -->
+            {% if distance %}
+                <div class="distance-info bg-dark p-3 rounded-3 text-center mt-4">
+                    <p class="mb-0"><b>Distance between the two countries:</b> {{ distance|intcomma }} km (this distance is approximated from the center of the countries)</p>
+                </div>
+            {% endif %}
+        </div>
+    </section>
 
 {% endblock %}

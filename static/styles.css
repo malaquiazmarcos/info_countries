@@ -7,7 +7,7 @@ body {
     padding: 0;
 }
 .hero-section {
-    background: url("/static/images/neom.jpg") no-repeat center center;
+    background: url("/static/images/neom2.webp") no-repeat center center;
     background-size: cover;
     color: #ffff;
     height: 100vh;
@@ -33,7 +33,7 @@ body {
     z-index: 1;
 }
 .hero-section-II {
-    background: url("/static/images/aurora.jpg") no-repeat center center;
+    background: url("/static/images/aurora.webp") no-repeat center center;
     background-size: cover;
     color: #ffff;
     height: 100vh;
@@ -85,46 +85,11 @@ body {
     text-decoration: none;
 }
 
-.hero-section-allcountries {
-    background: url("/static/images/neom.jpg") no-repeat center center;
-    background-size: cover;
-    color: #ffff;
-    height: 70vh;
-    position: relative;
-}
-.hero-section-allcountries::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-}
-
-.hero-section-searchcountry {
-    background: url("/static/images/neom.jpg") no-repeat center center;
-    background-size: cover;
-    color: #ffff;
-    height: 70vh;
-    position: relative;
-}
-.hero-section-searchcountry::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-}
-
-
-
 .intro-icons {
     width: 60px;
     height: 60px;
 }
+
 
 /* footer */
 .social-icons {
@@ -154,7 +119,7 @@ footer {
     opacity: 0.7;
 }
 
-
+/* color azul del body */
 .body-section {
     background-color: #080d18;
     color: #ffff;
@@ -183,6 +148,14 @@ footer {
     display: block;
 }
 
+.card-img-top {
+    filter: brightness(0.7);
+    transition: opacity 0.3s ease;
+}
+.card-img-top:hover {
+    filter: brightness(1);
+}
+
 .overlay {
     position: absolute;
     bottom: 0;
@@ -200,4 +173,203 @@ footer {
     font-weight: bold;
     text-align: center;
     padding: 10px;
+}
+
+
+
+
+
+/* all countries */
+.hero-section-allcountries {
+    background: url("/static/images/singapur.jpg") no-repeat center center;
+    background-size: cover;
+    color: #ffff;
+    height: 70vh;
+    position: relative;
+}
+.hero-section-allcountries::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+.hero-section-allcountries::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px; /* Altura del difuminado */
+    background: linear-gradient(to bottom, transparent, #080d18); /* Gradiente de transparente al color de la siguiente sección */
+    z-index: 1;
+}
+/* Estilos para los enlaces dentro de la tabla */
+.table a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.table a:hover {
+    color: #bbb !important; /* Sobrescribe el color de Bootstrap */
+    text-decoration: underline;
+}
+
+
+
+
+
+/* search countries */
+
+.hero-section-searchcountry {
+    background: url("/static/images/buscar22.webp") no-repeat center center;
+    background-size: cover;
+    color: #ffff;
+    height: 70vh;
+    position: relative;
+}
+.hero-section-searchcountry::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+.hero-section-searchcountry::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px; /* Altura del difuminado */
+    background: linear-gradient(to bottom, transparent, #080d18); /* Gradiente de transparente al color de la siguiente sección */
+    z-index: 1;
+}
+
+/* Estilos para los párrafos dentro de country-info */
+.country-info p {
+    color: #ccc; /* Color gris claro para los párrafos */
+}
+
+/* Estilos para los enlaces dentro de country-info */
+.country-info p a {
+    transition: color 0.3s ease;
+}
+
+.country-info p a:hover {
+    color: #bbb !important; /* Sobrescribe el color de Bootstrap */
+    text-decoration: underline;
+}
+
+
+/* compare countries */
+.hero-section-comparecountries {
+    background: url("/static/images/comparar22.webp") no-repeat center center;
+    background-size: cover;
+    color: #ffff;
+    height: 70vh;
+    position: relative;
+}
+.hero-section-comparecountries::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+.hero-section-comparecountries::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px; /* Altura del difuminado */
+    background: linear-gradient(to bottom, transparent, #080d18); /* Gradiente de transparente al color de la siguiente sección */
+    z-index: 1;
+}
+/* Estilos para country-info (ya existente de la sección de búsqueda) */
+.country-info p {
+    color: #ccc;
+}
+
+.country-info p a {
+    transition: color 0.3s ease;
+}
+
+.country-info p a:hover {
+    color: #bbb !important;
+    text-decoration: underline;
+}
+
+/* Estilos para distance-info */
+.distance-info p {
+    color: #ccc;
+}
+
+
+
+/* guess the country */
+.hero-section-guesscountries {
+    background: url("/static/images/lugar22.webp") no-repeat center center;
+    background-size: cover;
+    color: #ffff;
+    height: 70vh;
+    position: relative;
+}
+.hero-section-guesscountries::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+.hero-section-guesscountries::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px; /* Altura del difuminado */
+    background: linear-gradient(to bottom, transparent, #080d18); /* Gradiente de transparente al color de la siguiente sección */
+    z-index: 1;
+}
+/* Estilos para country-info (ya existente) */
+.country-info p {
+    color: #ccc;
+}
+
+.country-info p a {
+    transition: color 0.3s ease;
+}
+
+.country-info p a:hover {
+    color: #bbb !important;
+    text-decoration: underline;
+}
+
+/* Estilos para random-country */
+#random-country img {
+    max-width: 200px;
+    border-radius: 5px;
+}
+
+/* Estilos para result-message */
+#result-message.correct {
+    color: #28a745; /* Verde para respuesta correcta */
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+#result-message.incorrect {
+    color: #dc3545; /* Rojo para respuesta incorrecta */
+    font-size: 1.2rem;
+    font-weight: 600;
 }
