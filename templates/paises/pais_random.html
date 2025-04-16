@@ -6,6 +6,7 @@
 
 {% block content %}
 
+    <!-- Image hero I -->
     <section class="hero-section-guesscountries d-flex align-items-center">
         <div class="container position-relative">
             <div class="row">
@@ -17,32 +18,12 @@
                         Test your knowledge and have fun!
                     </p>
                 </div>
-
-                <!-- <div class="col-lg-4">
-                    <img src="https://via.placeholder.com/300x400" class="img-fluid" alt="Travel Image">
-                </div> -->
                 
             </div>
         </div>
     </section>
 
-    <!-- <h1>Guess the Country</h1>
-
-    <button id="start-button">Start</button>
-
-    <div id="random-country"></div>
-
-    <div id="input-div" style="display: none;">
-        <input type="text" id="country-input" placeholder="Enter the country">
-        <button type="submit" id="submit-button">Submit</button>
-    </div>
-
-    <button id="refresh-country" style="display: none;">Refresh</button>
-
-    <div id="result-message"></div>
-
-    <div id="data-country"></div>
- -->
+    <!-- main content of the section -->
     <section class="body-section py-5">
         <div class="container">
             <h1 class="display-4 text-center mb-5"><b>Guess the Country</b></h1>
@@ -74,11 +55,26 @@
         </div>
     </section>
 
-
-
 {% endblock %}
 
 {% block scripts %}
+
+    <!-- load the js --only in this page occupied -->
     <script src="{% static 'scripts.js' %}" defer></script>
+
+     <!-- Allow the navbar in top when scroll --> 
+    <script>
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (scrollPosition > 50) { // Cambia a .scrolled después de 50px de scroll
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+
 {% endblock %}
 

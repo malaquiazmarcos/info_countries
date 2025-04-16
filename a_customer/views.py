@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect, JsonResponse
+from django.contrib import messages
 from a_customer.services import get_all_countries, get_country_name
 from a_customer.forms import SearchCountry, CompareCountries
 from a_customer. utils import order_countries, order_countries_with_break, haversine

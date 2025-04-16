@@ -114,8 +114,19 @@ document.getElementById('start-button').addEventListener('click', async function
         document.getElementById('show-country-name').innerHTML = `${currentCountryName}`;
         document.getElementById('data-country').classList.remove('d-none');
         document.getElementById('data-country').innerHTML = 
-                `<a href="/search-country-for-name/?name=${encodeURIComponent(currentCountryName)}" style="text-decoration:none; color=#fff;">Learn more about ${currentCountryName}</a>`;
-
+                `<a 
+                    href="/search-country-for-name/?name=${encodeURIComponent(currentCountryName)}" 
+                    style="
+                        text-decoration: none;
+                        color: #ffffff;
+                        font-weight: 500;
+                        position: relative;
+                        transition: all 0.3s ease;
+                        "   
+                    onmouseover="this.style.color='#a0d2ff'; this.querySelector('.underline').style.width='100%'"
+                    onmouseout="this.style.color='#ffffff'; this.querySelector('.underline').style.width='0'">
+                    Learn more about ${currentCountryName}
+                </a>`;
     })
 
     /**
@@ -145,15 +156,38 @@ document.getElementById('start-button').addEventListener('click', async function
             document.getElementById('input-div').style.display = 'none';
             document.getElementById('data-country').classList.remove('d-none');
             document.getElementById('data-country').innerHTML = 
-                `<a href="/search-country-for-name/?name=${encodeURIComponent(result.correct_answer)}">Learn more about ${result.correct_answer}</a>`;
+                `<a 
+                    href="/search-country-for-name/?name=${encodeURIComponent(currentCountryName)}" 
+                    style="
+                        text-decoration: none;
+                        color: #ffffff;
+                        font-weight: 500;
+                        position: relative;
+                        transition: all 0.3s ease;
+                        "   
+                    onmouseover="this.style.color='#a0d2ff'; this.querySelector('.underline').style.width='100%'"
+                    onmouseout="this.style.color='#ffffff'; this.querySelector('.underline').style.width='0'">
+                    Learn more about ${currentCountryName}
+                </a>`;
         } else {
             document.getElementById('result-message').innerText = `❌ Wrong! It was: ${result.correct_answer}`;
             document.getElementById('data-country').classList.remove('d-none');
             document.getElementById('data-country').innerHTML = 
-                `<a href="/search-country-for-name/?name=${encodeURIComponent(result.correct_answer)}">Learn more about ${result.correct_answer}</a>`;
+                `<a 
+                    href="/search-country-for-name/?name=${encodeURIComponent(currentCountryName)}" 
+                    style="
+                        text-decoration: none;
+                        color: #ffffff;
+                        font-weight: 500;
+                        position: relative;
+                        transition: all 0.3s ease;
+                        "   
+                    onmouseover="this.style.color='#a0d2ff'; this.querySelector('.underline').style.width='100%'"
+                    onmouseout="this.style.color='#ffffff'; this.querySelector('.underline').style.width='0'">
+                    Learn more about ${currentCountryName}
+                </a>`;
         }
     });
-
 });
 
 

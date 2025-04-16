@@ -1,0 +1,1526 @@
+[
+    {
+        "name": {
+            "common": "Afghanistan",
+            "official": "Islamic Republic of Afghanistan",
+            "nativeName": {
+                "prs": {
+                    "official": "جمهوری اسلامی افغانستان",
+                    "common": "افغانستان"
+                },
+                "pus": {
+                    "official": "د افغانستان اسلامي جمهوریت",
+                    "common": "افغانستان"
+                },
+                "tuk": {
+                    "official": "Owganystan Yslam Respublikasy",
+                    "common": "Owganystan"
+                }
+            }
+        },
+        "tld": [
+            ".af"
+        ],
+        "cca2": "AF",
+        "ccn3": "004",
+        "cca3": "AFG",
+        "cioc": "AFG",
+        "independent": true,
+        "status": "officially-assigned",
+        "unMember": true,
+        "currencies": {
+            "AFN": {
+                "name": "Afghan afghani",
+                "symbol": "؋"
+            }
+        },
+        "idd": {
+            "root": "+9",
+            "suffixes": [
+                "3"
+            ]
+        },
+        "capital": [
+            "Kabul"
+        ],
+        "altSpellings": [
+            "AF",
+            "Afġānistān"
+        ],
+        "region": "Asia",
+        "subregion": "Southern Asia",
+        "languages": {
+            "prs": "Dari",
+            "pus": "Pashto",
+            "tuk": "Turkmen"
+        },
+        "translations": {
+            "ara": {
+                "official": "جمهورية أففانستان الإسلامية",
+                "common": "أفغانستان"
+            },
+            "bre": {
+                "official": "Republik Islamek Afghanistan",
+                "common": "Afghanistan"
+            },
+            "ces": {
+                "official": "Afghánská islámská republika",
+                "common": "Afghánistán"
+            },
+            "cym": {
+                "official": "Gweriniaeth Islamaidd Affganistan",
+                "common": "Affganistan"
+            },
+            "deu": {
+                "official": "Islamische Republik Afghanistan",
+                "common": "Afghanistan"
+            },
+            "est": {
+                "official": "Afganistani Islamivabariik",
+                "common": "Afganistan"
+            },
+            "fin": {
+                "official": "Afganistanin islamilainen tasavalta",
+                "common": "Afganistan"
+            },
+            "fra": {
+                "official": "République islamique d'Afghanistan",
+                "common": "Afghanistan"
+            },
+            "hrv": {
+                "official": "Islamska Republika Afganistan",
+                "common": "Afganistan"
+            },
+            "hun": {
+                "official": "Afganisztáni Iszlám Köztársaság",
+                "common": "Afganisztán"
+            },
+            "ita": {
+                "official": "Repubblica islamica dell'Afghanistan",
+                "common": "Afghanistan"
+            },
+            "jpn": {
+                "official": "アフガニスタン·イスラム共和国",
+                "common": "アフガニスタン"
+            },
+            "kor": {
+                "official": "아프가니스탄 이슬람 공화국",
+                "common": "아프가니스탄"
+            },
+            "nld": {
+                "official": "Islamitische Republiek Afghanistan",
+                "common": "Afghanistan"
+            },
+            "per": {
+                "official": "جمهوری اسلامی افغانستان",
+                "common": "افغانستان"
+            },
+            "pol": {
+                "official": "Islamska Republika Afganistanu",
+                "common": "Afganistan"
+            },
+            "por": {
+                "official": "República Islâmica do Afeganistão",
+                "common": "Afeganistão"
+            },
+            "rus": {
+                "official": "Исламская Республика Афганистан",
+                "common": "Афганистан"
+            },
+            "slk": {
+                "official": "Afgánsky islamský štát",
+                "common": "Afganistan"
+            },
+            "spa": {
+                "official": "República Islámica de Afganistán",
+                "common": "Afganistán"
+            },
+            "srp": {
+                "official": "Исламска Република Авганистан",
+                "common": "Авганистан"
+            },
+            "swe": {
+                "official": "Islamiska republiken Afghanistan",
+                "common": "Afghanistan"
+            },
+            "tur": {
+                "official": "Afganistan İslam Cumhuriyeti",
+                "common": "Afganistan"
+            },
+            "urd": {
+                "official": "اسلامی جمہوریہ افغانستان",
+                "common": "افغانستان"
+            },
+            "zho": {
+                "official": "阿富汗伊斯兰共和国",
+                "common": "阿富汗"
+            }
+        },
+        "latlng": [
+            33.0,
+            65.0
+        ],
+        "landlocked": true,
+        "borders": [
+            "IRN",
+            "PAK",
+            "TKM",
+            "UZB",
+            "TJK",
+            "CHN"
+        ],
+        "area": 652230.0,
+        "demonyms": {
+            "eng": {
+                "f": "Afghan",
+                "m": "Afghan"
+            },
+            "fra": {
+                "f": "Afghane",
+                "m": "Afghan"
+            }
+        },
+        "flag": "🇦🇫",
+        "maps": {
+            "googleMaps": "https://goo.gl/maps/BXBGw7yUUFknCfva9",
+            "openStreetMaps": "https://www.openstreetmap.org/relation/303427"
+        },
+        "population": 40218234,
+        "fifa": "AFG",
+        "car": {
+            "signs": [
+                "AFG"
+            ],
+            "side": "right"
+        },
+        "timezones": [
+            "UTC+04:30"
+        ],
+        "continents": [
+            "Asia"
+        ],
+        "flags": {
+            "png": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_the_Taliban.svg/320px-Flag_of_the_Taliban.svg.png",
+            "svg": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_the_Taliban.svg",
+            "alt": "The flag of the Islamic Emirate of Afghanistan has a white field with Arabic inscriptions — the Shahada — in black across its center."
+        },
+        "coatOfArms": {
+            "png": "https://mainfacts.com/media/images/coats_of_arms/af.png",
+            "svg": "https://mainfacts.com/media/images/coats_of_arms/af.svg"
+        },
+        "startOfWeek": "monday",
+        "capitalInfo": {
+            "latlng": [
+                34.52,
+                69.18
+            ]
+        }
+    },
+    {
+        "name": {
+            "common": "Algeria",
+            "official": "People's Democratic Republic of Algeria",
+            "nativeName": {
+                "ara": {
+                    "official": "الجمهورية الديمقراطية الشعبية الجزائرية",
+                    "common": "الجزائر"
+                }
+            }
+        },
+        "tld": [
+            ".dz",
+            "الجزائر."
+        ],
+        "cca2": "DZ",
+        "ccn3": "012",
+        "cca3": "DZA",
+        "cioc": "ALG",
+        "independent": true,
+        "status": "officially-assigned",
+        "unMember": true,
+        "currencies": {
+            "DZD": {
+                "name": "Algerian dinar",
+                "symbol": "د.ج"
+            }
+        },
+        "idd": {
+            "root": "+2",
+            "suffixes": [
+                "13"
+            ]
+        },
+        "capital": [
+            "Algiers"
+        ],
+        "altSpellings": [
+            "DZ",
+            "Dzayer",
+            "Algérie"
+        ],
+        "region": "Africa",
+        "subregion": "Northern Africa",
+        "languages": {
+            "ara": "Arabic"
+        },
+        "translations": {
+            "ara": {
+                "official": "الجمهورية الديمقراطية الشعبية الجزائرية",
+                "common": "الجزائر"
+            },
+            "bre": {
+                "official": "Republik Aljerian Demokratel ha Poblel",
+                "common": "Aljeria"
+            },
+            "ces": {
+                "official": "Alžírská demokratická a lidová republika",
+                "common": "Alžírsko"
+            },
+            "cym": {
+                "official": "Gweriniaeth Ddemocrataidd Pobl Algeria",
+                "common": "Algeria"
+            },
+            "deu": {
+                "official": "Demokratische Volksrepublik Algerien",
+                "common": "Algerien"
+            },
+            "est": {
+                "official": "Alžeeria Demokraatlik Rahvavabariik",
+                "common": "Alžeeria"
+            },
+            "fin": {
+                "official": "Algerian demokraattinen kansantasavalta",
+                "common": "Algeria"
+            },
+            "fra": {
+                "official": "République démocratique et populaire d'Algérie",
+                "common": "Algérie"
+            },
+            "hrv": {
+                "official": "Narodna Demokratska Republika Alžir",
+                "common": "Alžir"
+            },
+            "hun": {
+                "official": "Algériai Népi Demokratikus Köztársaság",
+                "common": "Algéria"
+            },
+            "ita": {
+                "official": "Repubblica popolare democratica di Algeria",
+                "common": "Algeria"
+            },
+            "jpn": {
+                "official": "アルジェリア人民民主共和国",
+                "common": "アルジェリア"
+            },
+            "kor": {
+                "official": "알제리 인민 민주 공화국",
+                "common": "알제리"
+            },
+            "nld": {
+                "official": "Democratische Volksrepubliek Algerije",
+                "common": "Algerije"
+            },
+            "per": {
+                "official": "جمهوری دموکراتیک خلق الجزایر",
+                "common": "الجزایر"
+            },
+            "pol": {
+                "official": "Algierska Republika Ludowo-Demokratyczna",
+                "common": "Algieria"
+            },
+            "por": {
+                "official": "República Argelina Democrática e Popular",
+                "common": "Argélia"
+            },
+            "rus": {
+                "official": "Народно-Демократическая Республика Алжир",
+                "common": "Алжир"
+            },
+            "slk": {
+                "official": "Alžírska demokratická ľudová republika",
+                "common": "Alžírsko"
+            },
+            "spa": {
+                "official": "República Argelina Democrática y Popular",
+                "common": "Argelia"
+            },
+            "srp": {
+                "official": "Народна Демократска Република Алжир",
+                "common": "Алжир"
+            },
+            "swe": {
+                "official": "Demokratiska folkrepubliken Algeriet",
+                "common": "Algeriet"
+            },
+            "tur": {
+                "official": "Cezayir Demokratik Halk Cumhuriyeti",
+                "common": "Cezayir"
+            },
+            "urd": {
+                "official": "عوامی جمہوری جمہوریہ الجزائر",
+                "common": "الجزائر"
+            },
+            "zho": {
+                "official": "阿尔及利亚人民民主共和国",
+                "common": "阿尔及利亚"
+            }
+        },
+        "latlng": [
+            28.0,
+            3.0
+        ],
+        "landlocked": false,
+        "borders": [
+            "TUN",
+            "LBY",
+            "NER",
+            "ESH",
+            "MRT",
+            "MLI",
+            "MAR"
+        ],
+        "area": 2381741.0,
+        "demonyms": {
+            "eng": {
+                "f": "Algerian",
+                "m": "Algerian"
+            },
+            "fra": {
+                "f": "Algérienne",
+                "m": "Algérien"
+            }
+        },
+        "flag": "🇩🇿",
+        "maps": {
+            "googleMaps": "https://goo.gl/maps/RsAyAfyaiNVb8DpW8",
+            "openStreetMaps": "https://www.openstreetmap.org/relation/192756"
+        },
+        "population": 44700000,
+        "gini": {
+            "2011": 27.6
+        },
+        "fifa": "ALG",
+        "car": {
+            "signs": [
+                "DZ"
+            ],
+            "side": "right"
+        },
+        "timezones": [
+            "UTC+01:00"
+        ],
+        "continents": [
+            "Africa"
+        ],
+        "flags": {
+            "png": "https://flagcdn.com/w320/dz.png",
+            "svg": "https://flagcdn.com/dz.svg",
+            "alt": "The flag of Algeria features two equal vertical bands of green and white. A five-pointed red star within a fly-side facing red crescent is centered over the two-color boundary."
+        },
+        "coatOfArms": {
+            "png": "https://mainfacts.com/media/images/coats_of_arms/dz.png",
+            "svg": "https://mainfacts.com/media/images/coats_of_arms/dz.svg"
+        },
+        "startOfWeek": "sunday",
+        "capitalInfo": {
+            "latlng": [
+                36.75,
+                3.05
+            ]
+        },
+        "postalCode": {
+            "format": "#####",
+            "regex": "^(\\d{5})$"
+        }
+    },
+    {
+        "name": {
+            "common": "Argentina",
+            "official": "Argentine Republic",
+            "nativeName": {
+                "grn": {
+                    "official": "Argentine Republic",
+                    "common": "Argentina"
+                },
+                "spa": {
+                    "official": "República Argentina",
+                    "common": "Argentina"
+                }
+            }
+        },
+        "tld": [
+            ".ar"
+        ],
+        "cca2": "AR",
+        "ccn3": "032",
+        "cca3": "ARG",
+        "cioc": "ARG",
+        "independent": true,
+        "status": "officially-assigned",
+        "unMember": true,
+        "currencies": {
+            "ARS": {
+                "name": "Argentine peso",
+                "symbol": "$"
+            }
+        },
+        "idd": {
+            "root": "+5",
+            "suffixes": [
+                "4"
+            ]
+        },
+        "capital": [
+            "Buenos Aires"
+        ],
+        "altSpellings": [
+            "AR",
+            "Argentine Republic",
+            "República Argentina"
+        ],
+        "region": "Americas",
+        "subregion": "South America",
+        "languages": {
+            "grn": "Guaraní",
+            "spa": "Spanish"
+        },
+        "translations": {
+            "ara": {
+                "official": "جمهورية الأرجنتين",
+                "common": "الأرجنتين"
+            },
+            "bre": {
+                "official": "Republik Arc'hantina",
+                "common": "Arc'hantina"
+            },
+            "ces": {
+                "official": "Argentinská republika",
+                "common": "Argentina"
+            },
+            "cym": {
+                "official": "Gweriniaeth yr Ariannin",
+                "common": "Ariannin"
+            },
+            "deu": {
+                "official": "Argentinische Republik",
+                "common": "Argentinien"
+            },
+            "est": {
+                "official": "Argentina Vabariik",
+                "common": "Argentina"
+            },
+            "fin": {
+                "official": "Argentiinan tasavalta",
+                "common": "Argentiina"
+            },
+            "fra": {
+                "official": "République argentine",
+                "common": "Argentine"
+            },
+            "hrv": {
+                "official": "Argentinski Republika",
+                "common": "Argentina"
+            },
+            "hun": {
+                "official": "Argentin Köztársaság",
+                "common": "Argentína"
+            },
+            "ita": {
+                "official": "Repubblica Argentina",
+                "common": "Argentina"
+            },
+            "jpn": {
+                "official": "アルゼンチン共和国",
+                "common": "アルゼンチン"
+            },
+            "kor": {
+                "official": "아르헨티나 공화국",
+                "common": "아르헨티나"
+            },
+            "nld": {
+                "official": "Argentijnse Republiek",
+                "common": "Argentinië"
+            },
+            "per": {
+                "official": "جمهوری آرژانتین",
+                "common": "آرژانتین"
+            },
+            "pol": {
+                "official": "Republika Argentyńska",
+                "common": "Argentyna"
+            },
+            "por": {
+                "official": "República Argentina",
+                "common": "Argentina"
+            },
+            "rus": {
+                "official": "Аргентинская Республика",
+                "common": "Аргентина"
+            },
+            "slk": {
+                "official": "Argentínska republika",
+                "common": "Argentína"
+            },
+            "spa": {
+                "official": "República Argentina",
+                "common": "Argentina"
+            },
+            "srp": {
+                "official": "Аргентинска Република",
+                "common": "Аргентина"
+            },
+            "swe": {
+                "official": "Republiken Argentina",
+                "common": "Argentina"
+            },
+            "tur": {
+                "official": "Arjantin Cumhuriyeti",
+                "common": "Arjantin"
+            },
+            "urd": {
+                "official": "جمہوریہ ارجنٹائن",
+                "common": "ارجنٹائن"
+            },
+            "zho": {
+                "official": "阿根廷共和国",
+                "common": "阿根廷"
+            }
+        },
+        "latlng": [
+            -34.0,
+            -64.0
+        ],
+        "landlocked": false,
+        "borders": [
+            "BOL",
+            "BRA",
+            "CHL",
+            "PRY",
+            "URY"
+        ],
+        "area": 2780400.0,
+        "demonyms": {
+            "eng": {
+                "f": "Argentine",
+                "m": "Argentine"
+            },
+            "fra": {
+                "f": "Argentine",
+                "m": "Argentin"
+            }
+        },
+        "flag": "🇦🇷",
+        "maps": {
+            "googleMaps": "https://goo.gl/maps/Z9DXNxhf2o93kvyc6",
+            "openStreetMaps": "https://www.openstreetmap.org/relation/286393"
+        },
+        "population": 45376763,
+        "gini": {
+            "2019": 42.9
+        },
+        "fifa": "ARG",
+        "car": {
+            "signs": [
+                "RA"
+            ],
+            "side": "right"
+        },
+        "timezones": [
+            "UTC-03:00"
+        ],
+        "continents": [
+            "South America"
+        ],
+        "flags": {
+            "png": "https://flagcdn.com/w320/ar.png",
+            "svg": "https://flagcdn.com/ar.svg",
+            "alt": "The flag of Argentina features three equal horizontal bands of light blue, white and light blue. A brown-edged golden sun is centered in the white band."
+        },
+        "coatOfArms": {
+            "png": "https://mainfacts.com/media/images/coats_of_arms/ar.png",
+            "svg": "https://mainfacts.com/media/images/coats_of_arms/ar.svg"
+        },
+        "startOfWeek": "monday",
+        "capitalInfo": {
+            "latlng": [
+                -34.58,
+                -58.67
+            ]
+        },
+        "postalCode": {
+            "format": "@####@@@",
+            "regex": "^([A-Z]\\d{4}[A-Z]{3})$"
+        }
+    },
+    {
+        "name": {
+            "common": "Brazil",
+            "official": "Federative Republic of Brazil",
+            "nativeName": {
+                "por": {
+                    "official": "República Federativa do Brasil",
+                    "common": "Brasil"
+                }
+            }
+        },
+        "tld": [
+            ".br"
+        ],
+        "cca2": "BR",
+        "ccn3": "076",
+        "cca3": "BRA",
+        "cioc": "BRA",
+        "independent": true,
+        "status": "officially-assigned",
+        "unMember": true,
+        "currencies": {
+            "BRL": {
+                "name": "Brazilian real",
+                "symbol": "R$"
+            }
+        },
+        "idd": {
+            "root": "+5",
+            "suffixes": [
+                "5"
+            ]
+        },
+        "capital": [
+            "Brasília"
+        ],
+        "altSpellings": [
+            "BR",
+            "Brasil",
+            "Federative Republic of Brazil",
+            "República Federativa do Brasil"
+        ],
+        "region": "Americas",
+        "subregion": "South America",
+        "languages": {
+            "por": "Portuguese"
+        },
+        "translations": {
+            "ara": {
+                "official": "جمهورية البرازيل الاتحادية",
+                "common": "البرازيل"
+            },
+            "bre": {
+                "official": "Republik Kevreel Brazil",
+                "common": "Brazil"
+            },
+            "ces": {
+                "official": "Brazilská federativní republika",
+                "common": "Brazílie"
+            },
+            "cym": {
+                "official": "Gweriniaeth Ffederal Brasil",
+                "common": "Brasil"
+            },
+            "deu": {
+                "official": "Föderative Republik Brasilien",
+                "common": "Brasilien"
+            },
+            "est": {
+                "official": "Brasiilia Liitvabariik",
+                "common": "Brasiilia"
+            },
+            "fin": {
+                "official": "Brasilian liittotasavalta",
+                "common": "Brasilia"
+            },
+            "fra": {
+                "official": "République fédérative du Brésil",
+                "common": "Brésil"
+            },
+            "hrv": {
+                "official": "Savezne Republike Brazil",
+                "common": "Brazil"
+            },
+            "hun": {
+                "official": "Brazil Szövetségi Köztársaság",
+                "common": "Brazília"
+            },
+            "ita": {
+                "official": "Repubblica federativa del Brasile",
+                "common": "Brasile"
+            },
+            "jpn": {
+                "official": "ブラジル連邦共和国",
+                "common": "ブラジル"
+            },
+            "kor": {
+                "official": "브라질 연방 공화국",
+                "common": "브라질"
+            },
+            "nld": {
+                "official": "Federale Republiek Brazilië",
+                "common": "Brazilië"
+            },
+            "per": {
+                "official": "جمهوری فدراتیو برزیل",
+                "common": "برزیل"
+            },
+            "pol": {
+                "official": "Federacyjna Republika Brazylii",
+                "common": "Brazylia"
+            },
+            "por": {
+                "official": "República Federativa do Brasil",
+                "common": "Brasil"
+            },
+            "rus": {
+                "official": "Федеративная Республика Бразилия",
+                "common": "Бразилия"
+            },
+            "slk": {
+                "official": "Brazílska federatívna republika",
+                "common": "Brazília"
+            },
+            "spa": {
+                "official": "República Federativa del Brasil",
+                "common": "Brasil"
+            },
+            "srp": {
+                "official": "Савезна Република Бразил",
+                "common": "Бразил"
+            },
+            "swe": {
+                "official": "Förbundsrepubliken Brasilien",
+                "common": "Brasilien"
+            },
+            "tur": {
+                "official": "Brezilya Federal Cumhuriyeti",
+                "common": "Brezilya"
+            },
+            "urd": {
+                "official": "وفاقی جمہوریہ برازیل",
+                "common": "برازیل"
+            },
+            "zho": {
+                "official": "巴西联邦共和国",
+                "common": "巴西"
+            }
+        },
+        "latlng": [
+            -10.0,
+            -55.0
+        ],
+        "landlocked": false,
+        "borders": [
+            "ARG",
+            "BOL",
+            "COL",
+            "GUF",
+            "GUY",
+            "PRY",
+            "PER",
+            "SUR",
+            "URY",
+            "VEN"
+        ],
+        "area": 8515767.0,
+        "demonyms": {
+            "eng": {
+                "f": "Brazilian",
+                "m": "Brazilian"
+            },
+            "fra": {
+                "f": "Brésilienne",
+                "m": "Brésilien"
+            }
+        },
+        "flag": "🇧🇷",
+        "maps": {
+            "googleMaps": "https://goo.gl/maps/waCKk21HeeqFzkNC9",
+            "openStreetMaps": "https://www.openstreetmap.org/relation/59470"
+        },
+        "population": 212559409,
+        "gini": {
+            "2019": 53.4
+        },
+        "fifa": "BRA",
+        "car": {
+            "signs": [
+                "BR"
+            ],
+            "side": "right"
+        },
+        "timezones": [
+            "UTC-05:00",
+            "UTC-04:00",
+            "UTC-03:00",
+            "UTC-02:00"
+        ],
+        "continents": [
+            "South America"
+        ],
+        "flags": {
+            "png": "https://flagcdn.com/w320/br.png",
+            "svg": "https://flagcdn.com/br.svg",
+            "alt": "The flag of Brazil has a green field with a large yellow rhombus in the center. Within the rhombus is a dark blue globe with twenty-seven small five-pointed white stars depicting a starry sky and a thin white convex horizontal band inscribed with the national motto 'Ordem e Progresso' across its center."
+        },
+        "coatOfArms": {
+            "png": "https://mainfacts.com/media/images/coats_of_arms/br.png",
+            "svg": "https://mainfacts.com/media/images/coats_of_arms/br.svg"
+        },
+        "startOfWeek": "monday",
+        "capitalInfo": {
+            "latlng": [
+                -15.79,
+                -47.88
+            ]
+        },
+        "postalCode": {
+            "format": "#####-###",
+            "regex": "^(\\d{8})$"
+        }
+    },
+    {
+        "name": {
+            "common": "Paraguay",
+            "official": "Republic of Paraguay",
+            "nativeName": {
+                "grn": {
+                    "official": "Tetã Paraguái",
+                    "common": "Paraguái"
+                },
+                "spa": {
+                    "official": "República de Paraguay",
+                    "common": "Paraguay"
+                }
+            }
+        },
+        "tld": [
+            ".py"
+        ],
+        "cca2": "PY",
+        "ccn3": "600",
+        "cca3": "PRY",
+        "cioc": "PAR",
+        "independent": true,
+        "status": "officially-assigned",
+        "unMember": true,
+        "currencies": {
+            "PYG": {
+                "name": "Paraguayan guaraní",
+                "symbol": "₲"
+            }
+        },
+        "idd": {
+            "root": "+5",
+            "suffixes": [
+                "95"
+            ]
+        },
+        "capital": [
+            "Asunción"
+        ],
+        "altSpellings": [
+            "PY",
+            "Republic of Paraguay",
+            "República del Paraguay",
+            "Tetã Paraguái"
+        ],
+        "region": "Americas",
+        "subregion": "South America",
+        "languages": {
+            "grn": "Guaraní",
+            "spa": "Spanish"
+        },
+        "translations": {
+            "ara": {
+                "official": "جمهورية باراغواي",
+                "common": "باراغواي"
+            },
+            "bre": {
+                "official": "Republik Paraguay",
+                "common": "Paraguay"
+            },
+            "ces": {
+                "official": "Paraguayská republika",
+                "common": "Paraguay"
+            },
+            "cym": {
+                "official": "Republic of Paraguay",
+                "common": "Paraguay"
+            },
+            "deu": {
+                "official": "Republik Paraguay",
+                "common": "Paraguay"
+            },
+            "est": {
+                "official": "Paraguay Vabariik",
+                "common": "Paraguay"
+            },
+            "fin": {
+                "official": "Paraguayn tasavalta",
+                "common": "Paraguay"
+            },
+            "fra": {
+                "official": "République du Paraguay",
+                "common": "Paraguay"
+            },
+            "hrv": {
+                "official": "Republika Paragvaj",
+                "common": "Paragvaj"
+            },
+            "hun": {
+                "official": "Paraguayi Köztársaság",
+                "common": "Paraguay"
+            },
+            "ita": {
+                "official": "Repubblica del Paraguay",
+                "common": "Paraguay"
+            },
+            "jpn": {
+                "official": "パラグアイ共和国",
+                "common": "パラグアイ"
+            },
+            "kor": {
+                "official": "파라과이 공화국",
+                "common": "파라과이"
+            },
+            "nld": {
+                "official": "Republiek Paraguay",
+                "common": "Paraguay"
+            },
+            "per": {
+                "official": "جمهوری پاراگوئه",
+                "common": "پاراگوئه"
+            },
+            "pol": {
+                "official": "Republika Paragwaju",
+                "common": "Paragwaj"
+            },
+            "por": {
+                "official": "República do Paraguai",
+                "common": "Paraguai"
+            },
+            "rus": {
+                "official": "Республика Парагвай",
+                "common": "Парагвай"
+            },
+            "slk": {
+                "official": "Paraguajská republika",
+                "common": "Paraguaj"
+            },
+            "spa": {
+                "official": "República de Paraguay",
+                "common": "Paraguay"
+            },
+            "srp": {
+                "official": "Република Парагвај",
+                "common": "Парагвај"
+            },
+            "swe": {
+                "official": "Republiken Paraguay",
+                "common": "Paraguay"
+            },
+            "tur": {
+                "official": "Paraguay Cumhuriyeti",
+                "common": "Paraguay"
+            },
+            "urd": {
+                "official": "جمہوریہ پیراگوئے",
+                "common": "پیراگوئے"
+            },
+            "zho": {
+                "official": "巴拉圭共和国",
+                "common": "巴拉圭"
+            }
+        },
+        "latlng": [
+            -23.0,
+            -58.0
+        ],
+        "landlocked": true,
+        "borders": [
+            "ARG",
+            "BOL",
+            "BRA"
+        ],
+        "area": 406752.0,
+        "demonyms": {
+            "eng": {
+                "f": "Paraguayan",
+                "m": "Paraguayan"
+            },
+            "fra": {
+                "f": "Paraguayenne",
+                "m": "Paraguayen"
+            }
+        },
+        "flag": "🇵🇾",
+        "maps": {
+            "googleMaps": "https://goo.gl/maps/JtnqG73WJn1Gx6mz6",
+            "openStreetMaps": "https://www.openstreetmap.org/relation/287077"
+        },
+        "population": 7132530,
+        "gini": {
+            "2019": 45.7
+        },
+        "fifa": "PAR",
+        "car": {
+            "signs": [
+                "PY"
+            ],
+            "side": "right"
+        },
+        "timezones": [
+            "UTC-04:00"
+        ],
+        "continents": [
+            "South America"
+        ],
+        "flags": {
+            "png": "https://flagcdn.com/w320/py.png",
+            "svg": "https://flagcdn.com/py.svg",
+            "alt": "The flag of Paraguay features three equal horizontal bands of red, white and blue, with an emblem centered in the white band. On the obverse side of the flag depicted, this emblem is the national coat of arms."
+        },
+        "coatOfArms": {
+            "png": "https://mainfacts.com/media/images/coats_of_arms/py.png",
+            "svg": "https://mainfacts.com/media/images/coats_of_arms/py.svg"
+        },
+        "startOfWeek": "monday",
+        "capitalInfo": {
+            "latlng": [
+                -25.28,
+                -57.57
+            ]
+        },
+        "postalCode": {
+            "format": "####",
+            "regex": "^(\\d{4})$"
+        }
+    },
+    {
+        "name": {
+            "common": "Fiji",
+            "official": "Republic of Fiji",
+            "nativeName": {
+                "eng": {
+                    "official": "Republic of Fiji",
+                    "common": "Fiji"
+                },
+                "fij": {
+                    "official": "Matanitu Tugalala o Viti",
+                    "common": "Viti"
+                },
+                "hif": {
+                    "official": "रिपब्लिक ऑफ फीजी",
+                    "common": "फिजी"
+                }
+            }
+        },
+        "tld": [
+            ".fj"
+        ],
+        "cca2": "FJ",
+        "ccn3": "242",
+        "cca3": "FJI",
+        "cioc": "FIJ",
+        "independent": true,
+        "status": "officially-assigned",
+        "unMember": true,
+        "currencies": {
+            "FJD": {
+                "name": "Fijian dollar",
+                "symbol": "$"
+            }
+        },
+        "idd": {
+            "root": "+6",
+            "suffixes": [
+                "79"
+            ]
+        },
+        "capital": [
+            "Suva"
+        ],
+        "altSpellings": [
+            "FJ",
+            "Viti",
+            "Republic of Fiji",
+            "Matanitu ko Viti",
+            "Fijī Gaṇarājya"
+        ],
+        "region": "Oceania",
+        "subregion": "Melanesia",
+        "languages": {
+            "eng": "English",
+            "fij": "Fijian",
+            "hif": "Fiji Hindi"
+        },
+        "translations": {
+            "ara": {
+                "official": "جمهورية جزر فيجي",
+                "common": "فيجي"
+            },
+            "bre": {
+                "official": "Republik Fidji",
+                "common": "Fidji"
+            },
+            "ces": {
+                "official": "Republika Fidžijských ostrovů",
+                "common": "Fidži"
+            },
+            "cym": {
+                "official": "Republic of Fiji",
+                "common": "Fiji"
+            },
+            "deu": {
+                "official": "Republik Fidschi",
+                "common": "Fidschi"
+            },
+            "est": {
+                "official": "Fidži Vabariik",
+                "common": "Fidži"
+            },
+            "fin": {
+                "official": "Fidžin tasavalta",
+                "common": "Fidži"
+            },
+            "fra": {
+                "official": "République des Fidji",
+                "common": "Fidji"
+            },
+            "hrv": {
+                "official": "Republika Fidži",
+                "common": "Fiđi"
+            },
+            "hun": {
+                "official": "Fidzsi-szigeteki Köztársaság",
+                "common": "Fidzsi-szigetek"
+            },
+            "ita": {
+                "official": "Repubblica di Figi",
+                "common": "Figi"
+            },
+            "jpn": {
+                "official": "フィジー共和国",
+                "common": "フィジー"
+            },
+            "kor": {
+                "official": "피지 공화국",
+                "common": "피지"
+            },
+            "nld": {
+                "official": "Republiek Fiji",
+                "common": "Fiji"
+            },
+            "per": {
+                "official": "جمهوری جزایر فیجی",
+                "common": "فیجی"
+            },
+            "pol": {
+                "official": "Republika Fidżi",
+                "common": "Fidżi"
+            },
+            "por": {
+                "official": "República de Fiji",
+                "common": "Fiji"
+            },
+            "rus": {
+                "official": "Республика Фиджи",
+                "common": "Фиджи"
+            },
+            "slk": {
+                "official": "Fiǆijská republika",
+                "common": "Fiǆi"
+            },
+            "spa": {
+                "official": "República de Fiji",
+                "common": "Fiyi"
+            },
+            "srp": {
+                "official": "Република Фиџи",
+                "common": "Фиџи"
+            },
+            "swe": {
+                "official": "Republiken Fiji",
+                "common": "Fiji"
+            },
+            "tur": {
+                "official": "Fiji Cumhuriyeti",
+                "common": "Fiji"
+            },
+            "urd": {
+                "official": "جمہوریہ فجی",
+                "common": "فجی"
+            },
+            "zho": {
+                "official": "斐济共和国",
+                "common": "斐济"
+            }
+        },
+        "latlng": [
+            17.7134,
+            178.065
+        ],
+        "landlocked": false,
+        "area": 18272.0,
+        "demonyms": {
+            "eng": {
+                "f": "Fijian",
+                "m": "Fijian"
+            },
+            "fra": {
+                "f": "Fidjienne",
+                "m": "Fidjien"
+            }
+        },
+        "flag": "🇫🇯",
+        "maps": {
+            "googleMaps": "https://goo.gl/maps/r9fhDqoLZdg1zmE99",
+            "openStreetMaps": "https://www.openstreetmap.org/relation/571747"
+        },
+        "population": 896444,
+        "gini": {
+            "2013": 36.7
+        },
+        "fifa": "FIJ",
+        "car": {
+            "signs": [
+                "FJI"
+            ],
+            "side": "left"
+        },
+        "timezones": [
+            "UTC+12:00"
+        ],
+        "continents": [
+            "Oceania"
+        ],
+        "flags": {
+            "png": "https://flagcdn.com/w320/fj.png",
+            "svg": "https://flagcdn.com/fj.svg",
+            "alt": "The flag of Fiji has a light blue field. It features the flag of the United Kingdom — the Union Jack — in the canton and the shield of the national coat of arms centered in the fly half."
+        },
+        "coatOfArms": {
+            "png": "https://mainfacts.com/media/images/coats_of_arms/fj.png",
+            "svg": "https://mainfacts.com/media/images/coats_of_arms/fj.svg"
+        },
+        "startOfWeek": "monday",
+        "capitalInfo": {
+            "latlng": [
+                -18.13,
+                178.42
+            ]
+        }
+    },
+    {
+        "name": {
+            "common": "Cyprus",
+            "official": "Republic of Cyprus",
+            "nativeName": {
+                "ell": {
+                    "official": "Δημοκρατία της Κύπρος",
+                    "common": "Κύπρος"
+                },
+                "tur": {
+                    "official": "Kıbrıs Cumhuriyeti",
+                    "common": "Kıbrıs"
+                }
+            }
+        },
+        "tld": [
+            ".cy"
+        ],
+        "cca2": "CY",
+        "ccn3": "196",
+        "cca3": "CYP",
+        "cioc": "CYP",
+        "independent": true,
+        "status": "officially-assigned",
+        "unMember": true,
+        "currencies": {
+            "EUR": {
+                "name": "Euro",
+                "symbol": "€"
+            }
+        },
+        "idd": {
+            "root": "+3",
+            "suffixes": [
+                "57"
+            ]
+        },
+        "capital": [
+            "Nicosia"
+        ],
+        "altSpellings": [
+            "CY",
+            "Kýpros",
+            "Kıbrıs",
+            "Republic of Cyprus",
+            "Κυπριακή Δημοκρατία",
+            "Kıbrıs Cumhuriyeti"
+        ],
+        "region": "Europe",
+        "subregion": "Southern Europe",
+        "languages": {
+            "ell": "Greek",
+            "tur": "Turkish"
+        },
+        "translations": {
+            "ara": {
+                "official": "جمهورية قبرص",
+                "common": "قبرص"
+            },
+            "bre": {
+                "official": "Republik Kiprenez",
+                "common": "Kiprenez"
+            },
+            "ces": {
+                "official": "Kyperská republika",
+                "common": "Kypr"
+            },
+            "cym": {
+                "official": "Gweriniaeth Cyprus",
+                "common": "Cyprus"
+            },
+            "deu": {
+                "official": "Republik Zypern",
+                "common": "Zypern"
+            },
+            "est": {
+                "official": "Küprose Vabariik",
+                "common": "Küpros"
+            },
+            "fin": {
+                "official": "Kyproksen tasavalta",
+                "common": "Kypros"
+            },
+            "fra": {
+                "official": "République de Chypre",
+                "common": "Chypre"
+            },
+            "hrv": {
+                "official": "Republika Cipar",
+                "common": "Cipar"
+            },
+            "hun": {
+                "official": "Ciprusi Köztársaság",
+                "common": "Ciprus"
+            },
+            "ita": {
+                "official": "Repubblica di Cipro",
+                "common": "Cipro"
+            },
+            "jpn": {
+                "official": "キプロス共和国",
+                "common": "キプロス"
+            },
+            "kor": {
+                "official": "키프로스 공화국",
+                "common": "키프로스"
+            },
+            "nld": {
+                "official": "Republiek Cyprus",
+                "common": "Cyprus"
+            },
+            "per": {
+                "official": "جمهوری قبرس",
+                "common": "قِبرِس"
+            },
+            "pol": {
+                "official": "Republika Cypryjska",
+                "common": "Cypr"
+            },
+            "por": {
+                "official": "República de Chipre",
+                "common": "Chipre"
+            },
+            "rus": {
+                "official": "Республика Кипр",
+                "common": "Кипр"
+            },
+            "slk": {
+                "official": "Cyperská republika",
+                "common": "Cyprus"
+            },
+            "spa": {
+                "official": "República de Chipre",
+                "common": "Chipre"
+            },
+            "srp": {
+                "official": "Кипарска Република",
+                "common": "Кипар"
+            },
+            "swe": {
+                "official": "Republiken Cypern",
+                "common": "Cypern"
+            },
+            "tur": {
+                "official": "Kıbrıs Cumhuriyeti",
+                "common": "Kıbrıs"
+            },
+            "urd": {
+                "official": "جمہوریہ قبرص",
+                "common": "قبرص"
+            },
+            "zho": {
+                "official": "塞浦路斯共和国",
+                "common": "塞浦路斯"
+            }
+        },
+        "latlng": [
+            35.0,
+            33.0
+        ],
+        "landlocked": false,
+        "area": 9251.0,
+        "demonyms": {
+            "eng": {
+                "f": "Cypriot",
+                "m": "Cypriot"
+            },
+            "fra": {
+                "f": "Chypriote",
+                "m": "Chypriote"
+            }
+        },
+        "flag": "🇨🇾",
+        "maps": {
+            "googleMaps": "https://goo.gl/maps/77hPBRdLid8yD5Bm7",
+            "openStreetMaps": "https://www.openstreetmap.org/relation/307787"
+        },
+        "population": 1207361,
+        "gini": {
+            "2018": 32.7
+        },
+        "fifa": "CYP",
+        "car": {
+            "signs": [
+                "CY"
+            ],
+            "side": "left"
+        },
+        "timezones": [
+            "UTC+02:00"
+        ],
+        "continents": [
+            "Europe"
+        ],
+        "flags": {
+            "png": "https://flagcdn.com/w320/cy.png",
+            "svg": "https://flagcdn.com/cy.svg",
+            "alt": "The flag of Cyprus has a white field, at the center of which is a copper-colored silhouette of the Island of Cyprus above two green olive branches crossed at the stem."
+        },
+        "coatOfArms": {
+            "png": "https://mainfacts.com/media/images/coats_of_arms/cy.png",
+            "svg": "https://mainfacts.com/media/images/coats_of_arms/cy.svg"
+        },
+        "startOfWeek": "monday",
+        "capitalInfo": {
+            "latlng": [
+                35.17,
+                33.37
+            ]
+        },
+        "postalCode": {
+            "format": "####",
+            "regex": "^(\\d{4})$"
+        }
+    }
+]

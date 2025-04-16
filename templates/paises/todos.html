@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
 
-{% block title %}Todos los paises{% endblock %}
+{% block title %}All Countries{% endblock %}
 
 {% block content %}
 
+    <!-- Image hero I -->
     <section class="hero-section-allcountries d-flex align-items-center">
         <div class="container position-relative">
             <div class="row">
@@ -15,38 +16,24 @@
                         capitals, and more— your global journey starts here.
                     </p>
                 </div>
-
-                <!-- <div class="col-lg-4">
-                    <img src="https://via.placeholder.com/300x400" class="img-fluid" alt="Travel Image">
-                </div> -->
-                
             </div>
         </div>
     </section>
-    
-    <!-- <h1>All the countries</h1>
-
-    <table border="1">
-        <tr>
-            <th>Flag</th>
-            <th>Name</th>
-            <th>Capital</th>
-        </tr>
-        {% for data in order_list_countries %}
-            <tr>
-                    <td><a href="{% url 'country_for_name_view' %}?name={{ data.name }}"><img src="{{ data.flags }}" width="80px"></a></td>
-                    <td><a href="{% url 'country_for_name_view' %}?name={{ data.name }}">{{ data.name }}</a></td>
-                    <td><a href="{% url 'country_for_name_view' %}?name={{ data.name }}">{{ data.capital|join:', ' }}</a></td>
-            </tr>
-        {% endfor %}
-    </table> -->
-
-
 
     <section class="body-section py-5">
         <div class="container">
             <h1 class="display-4 text-center mb-5"><b>All the Countries</b></h1>
-    
+
+            <!-- Show the abecedary buttons -->
+            <div class="mb-3 text-center">
+                {% for letter in "ABCDEFGHIJKLMNOPQRSTUVWXYZ" %}
+                    <a href="#{{ letter }}" class="btn btn-outline-secondary btn-sm m-1 abc-links">
+                        {{ letter }}
+                    </a>
+                {% endfor %}
+            </div>
+
+            <!-- every data of the countries in a list -->
             <div class="table-responsive">
                 <table class="table table-dark table-hover table-bordered">
                     <thead>
@@ -64,8 +51,8 @@
                                         <img src="{{ data.flags }}" alt="{{ data.name }} flag" class="img-fluid rounded" style="max-width: 80px;" loading="lazy">
                                     </a>
                                 </td>
-                                <td>
-                                    <a href="{% url 'country_for_name_view' %}?name={{ data.name }}" class="text-secondary">{{ data.name }}</a>
+                                <td class="country-anchor">
+                                    <a href="{% url 'country_for_name_view' %}?name={{ data.name }}" class="text-secondary country-anchor" id="{{ data.name.0 }}">{{ data.name }}</a>
                                 </td>
                                 <td>
                                     <a href="{% url 'country_for_name_view' %}?name={{ data.name }}" class="text-secondary">{{ data.capital|join:', ' }}</a>

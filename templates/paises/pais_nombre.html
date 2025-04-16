@@ -1,10 +1,11 @@
 {% extends 'base.html' %}
 {% load humanize %}
 
-{% block title %}Buscar Pais por nombre{% endblock %}
+{% block title %}Search Country{% endblock %}
 
 {% block content %}
 
+    <!-- Image hero I -->
     <section class="hero-section-searchcountry d-flex align-items-center">
         <div class="container position-relative">
             <div class="row">
@@ -16,73 +17,19 @@
                         Discover its culture, flag, and capital in seconds.
                     </p>
                 </div>
-
-                <!-- <div class="col-lg-4">
-                    <img src="https://via.placeholder.com/300x400" class="img-fluid" alt="Travel Image">
-                </div> -->
-                
             </div>
         </div>
     </section>
 
-    <!-- <section class="body-section">
-
-        <h1>Search Country:</h1>
-        <form action="" method="post">
-            {% csrf_token %}
-            {{ form }}
-            <button type="submit">Search</button>
-        </form>
-
-        {% if not not_found %}
-            {% for data in list_country %}
-                {% if data is not none %}
-                    <h1>{{ data.name }}</h1>
-                    <p><img src="{{ data.flags }}" alt="{{ data.name }} flag" /></p>
-                    
-                    <h3>General Information</h3>
-                    <p>Official Name: {{ data.official_name }}</p>
-                    <p>Capital: {{ data.capital|join:", " }}</p>
-                    <p>Area: {{ data.area|intcomma }} km²</p>
-                    <p>Population: {{ data.population|intcomma }}</p>
-                    
-                    <h3>Geography & Location</h3>
-                    <p>Continents: {{ data.continents|join:', ' }}</p>
-                    <p>Region and Subregion: {{ data.region }} {{ data.subregion }}</p>
-                    <p>Latitude & Longitude: {{ data.latlng|join:', ' }}</p>
-                    <p>Borders: {{ data.borders|join:', ' }}</p>
-                    <p>Sea access: {{ data.landlocked }}</p>
-                    <p>Timezones: {{ data.timezones|join:', ' }}</p>
-                    <p>Maps: <a href="{{ data.maps.googleMaps }}" target="_blank">Click here</a></p>
-                    
-                    <h3>Languages & Currencies</h3>
-                    <p>Languages: {{ data.languages|join:', ' }}</p>
-                    <p>Currencies: {{ data.currencies|join:', ' }} {{ data.currencies_symbol|join:', ' }}</p>
-                    
-                    <h3>Additional Information</h3>
-                    <p>Demonym: {{ data.demonyms }}</p>
-                    <p>Independent: {{ data.independent }}</p>
-                {% endif %}
-            {% endfor %}
-        {% else %}
-            <p>The conuntry was not found: {{ country_name }}</p>
-        {% endif %}
-    </section> -->
-
-
-
-
-
+    <!-- main content of the section -->
     <section class="body-section py-5">
         <div class="container">
-            <!-- <div class="bg-dark p-4 rounded-3 shadow-sm mb-4"> -->
             <h1 class="display-4 text-center mb-5"><b>Search Country</b></h1>
             <form action="" method="post" class="d-flex flex-md-row flex-column justify-content-center align-items-center gap-3 mb-5 mx-auto" style="max-width: 600px;">
                 {% csrf_token %}
                 {{ form.country_name }}
                 <button type="submit" class="btn btn-dark mt-md-0 mt-2">Search</button>
             </form>
-            <!-- </div> -->
     
             {% if not not_found %}
                 {% for data in list_country %}
@@ -95,20 +42,27 @@
                             <p class="mb-2"><b>Official Name:</b> {{ data.official_name }}</p>
                             <p class="mb-2"><b>Capital:</b> {{ data.capital|join:", " }}</p>
                             <p class="mb-2"><b>Area:</b> {{ data.area|intcomma }} km²</p>
-                            <p class="mb-2"><b>Population:</b> {{ data.population|intcomma }}</p>
+                            <p class="mb-4"><b>Population:</b> {{ data.population|intcomma }}</p>
                             
                             <h3 class="h4 border-bottom pb-2 mb-3">Geography & Location</h3>
                             <p class="mb-2"><b>Continents:</b> {{ data.continents|join:', ' }}</p>
                             <p class="mb-2"><b>Region and Subregion:</b> {{ data.region }} {{ data.subregion }}</p>
                             <p class="mb-2"><b>Latitude & Longitude:</b> {{ data.latlng|join:', ' }}</p>
-                            <p class="mb-2"><b>Borders:</b> {{ data.borders|join:', ' }}</p>
+                            <p class="mb-2"><b>Borders:</b> 
+                                {% for country in data.borders %}
+                                    <a href="{% url 'country_for_name_view' %}?name={{ country }}" class="text-secondary borders-redirect">
+                                        {{ country}}
+                                    </a>
+                                    {% if not forloop.last %}, {% endif %} 
+                                {% endfor %}
+                            </p>
                             <p class="mb-2"><b>Sea access:</b> {{ data.landlocked }}</p>
                             <p class="mb-2"><b>Timezones:</b> {{ data.timezones|join:', ' }}</p>
-                            <p class="mb-2"><b>Maps:</b> <a href="{{ data.maps.googleMaps }}" target="_blank" class="text-secondary">Click here</a></p>
+                            <p class="mb-4"><b>Maps:</b> <a href="{{ data.maps.googleMaps }}" target="_blank" class="text-secondary borders-redirect">Click here</a></p>
                             
                             <h3 class="h4 border-bottom pb-2 mb-3">Languages & Currencies</h3>
                             <p class="mb-2"><b>Languages:</b> {{ data.languages|join:', ' }}</p>
-                            <p class="mb-2"><b>Currencies:</b> {{ data.currencies|join:', ' }} {{ data.currencies_symbol|join:', ' }}</p>
+                            <p class="mb-4"><b>Currencies:</b> {{ data.currencies|join:', ' }} {{ data.currencies_symbol|join:', ' }}</p>
                             
                             <h3 class="h4 border-bottom pb-2 mb-3">Additional Information</h3>
                             <p class="mb-2"><b>Demonym:</b> {{ data.demonyms }}</p>
